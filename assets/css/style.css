@@ -1831,3 +1831,9 @@ html, body{
     margin-top: 0;
   }
 }
+
+.hero-actions-only {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
