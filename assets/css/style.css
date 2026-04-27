@@ -1819,7 +1819,19 @@ html, body{
 /* ================= BAISSER LES BOUTONS BIO ET SAISON ACCEUIL ================= */
 
 @media (max-width: 600px) {
-  .hero-actions-only {
-    margin-top: 160px; /* augmente si besoin (140 / 160) */
+
+  .hero-copy--buttons-only {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
+
+  .hero-actions-only {
+    margin-top: auto; /* 🔥 pousse les boutons tout en bas */
+    padding-bottom: 20px; /* espace avec le bas */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
 }
