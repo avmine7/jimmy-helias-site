@@ -1597,11 +1597,6 @@ html, body{
     object-position:center top;
   }
 
-  .hero-overlay{
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.72)),
-      linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.12));
-  }
 
   .hero-content{
     padding:0 0 48px;
