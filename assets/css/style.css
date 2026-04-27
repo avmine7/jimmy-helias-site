@@ -1749,3 +1749,61 @@ html, body{
     min-width:120px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.partnersGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.partnerLogo {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.partnerLogo img {
+  height: 60px;
+  object-fit: contain;
+  /* ON ENLÈVE LE GRAYSCALE */
+  filter: none;
+  transition: all 0.3s ease;
+}
+
+/* Effet léger au hover (optionnel mais propre) */
+.partnerLogo:hover img {
+  transform: scale(1.08);
+}
+
+
+
+.partnerLogo img {
+  height: 60px;
+  object-fit: contain;
+  filter: none;
+  transition: all 0.3s ease;
+}
+
+.partnerLogo:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(0,255,200,0.4));
+}

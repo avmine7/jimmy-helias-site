@@ -1196,3 +1196,109 @@ img{max-width:100%; display:block}
     background:rgba(255,255,255,.06) !important;
   }
 }
+
+
+
+
+/* =========================================================
+HERO SIGNATURE EN ROUTE VERS LA F1
+========================================================= */
+
+/* ================= SIGNATURE HERO — EN ROUTE VERS LA F1 ================= */
+
+/* ================= SIGNATURE RACING PREMIUM ================= */
+
+.newsHero-signature {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 16px;
+  padding: 10px 18px 11px;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(15px, 1.55vw, 21px);
+  font-weight: 900;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  line-height: 1;
+
+  color: #f4ffff;
+
+  background:
+    linear-gradient(135deg, rgba(120,255,255,.18), rgba(255,255,255,.045) 45%, rgba(0,217,255,.10)),
+    rgba(2, 16, 24, .56);
+
+  border: 1px solid rgba(120,255,255,.36);
+  border-left: 4px solid #78ffff;
+  border-radius: 14px;
+
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.28),
+    0 0 22px rgba(120,255,255,.16),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+
+  text-shadow:
+    0 0 10px rgba(120,255,255,.38),
+    0 2px 10px rgba(0,0,0,.45);
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.newsHero-signature::before {
+  content: "";
+  width: 28px;
+  height: 8px;
+  display: inline-block;
+  flex: 0 0 auto;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #78ffff 0 5px,
+      transparent 5px 9px
+    );
+  opacity: .9;
+  filter: drop-shadow(0 0 8px rgba(120,255,255,.6));
+}
+
+.newsHero-signature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(255,255,255,.16) 42%, transparent 62%);
+  transform: translateX(-130%);
+  animation: racingShine 3.8s ease-in-out infinite;
+}
+
+@keyframes racingShine {
+  0% { transform: translateX(-130%); }
+  45%, 100% { transform: translateX(130%); }
+}
+
+.newsHero-signature:hover {
+  transform: translateY(-2px);
+  border-color: rgba(120,255,255,.62);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.34),
+    0 0 30px rgba(120,255,255,.26);
+}
+
+@media (max-width: 600px) {
+  .newsHero-signature {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 14px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .newsHero-signature::before {
+    width: 20px;
+  }
+}
