@@ -689,3 +689,120 @@ img{max-width:100%; display:block}
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1!important; transform:none!important; filter:none!important; transition:none!important;}
 }
+
+
+/* ================= EFFET POUR LE CHRONOS ================= */
+
+.time {
+  opacity: 0.5;
+  font-size: 0.85em;
+  margin-left: 6px;
+}
+
+
+
+
+
+/* ================= GALERIE NOGARO ================= */
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  min-height: 230px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+.galleryItem:nth-child(1),
+.galleryItem:nth-child(6) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.galleryItem img {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  display: block;
+  object-fit: cover;
+  filter: contrast(1.08) saturate(1.08);
+  transition: transform 0.65s ease, filter 0.65s ease;
+}
+
+.galleryItem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02),
+    rgba(0, 0, 0, 0.38)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.galleryItem::after {
+  content: "NOGARO";
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  opacity: 0.85;
+}
+
+.galleryItem:hover img {
+  transform: scale(1.08);
+  filter: contrast(1.14) saturate(1.14);
+}
+
+/* Tablette */
+@media (max-width: 1000px) {
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .galleryItem:nth-child(1),
+  .galleryItem:nth-child(6) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .galleryItem {
+    border-radius: 18px;
+    min-height: 220px;
+  }
+
+  .galleryItem img {
+    min-height: 220px;
+  }
+
+  .galleryItem::after {
+    left: 14px;
+    bottom: 12px;
+    font-size: 0.68rem;
+  }
+}
