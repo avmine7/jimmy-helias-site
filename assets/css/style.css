@@ -1818,22 +1818,3 @@ html, body{
 
 /* ================= BAISSER LES BOUTONS BIO ET SAISON ACCEUIL ================= */
 
-@media (max-width: 600px) {
-  .hero-cinematic {
-    position: relative;
-    min-height: 100vh;
-  }
-
-  .hero-content--buttons-only {
-    position: relative;
-    z-index: 5;
-    padding-top: 480px; /* augmente ici : 500 / 520 si besoin */
-  }
-
-  .hero-actions-only {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-}
