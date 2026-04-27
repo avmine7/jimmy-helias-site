@@ -1763,7 +1763,7 @@ html, body{
 
 
 
-
+/* ================= Partenaires ================= */
 
 
 
@@ -1806,4 +1806,20 @@ html, body{
 .partnerLogo:hover img {
   transform: scale(1.08);
   filter: drop-shadow(0 0 12px rgba(0,255,200,0.4));
+}
+
+
+
+
+
+
+
+
+
+/* ================= BAISSER LES BOUTONS BIO ET SAISON ACCEUIL ================= */
+
+@media (max-width: 768px) {
+  .heroCTA {
+    margin-top: 60px; /* ajuste entre 50 et 80 si besoin */
+  }
 }
