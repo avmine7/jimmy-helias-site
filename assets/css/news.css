@@ -704,92 +704,7 @@ img{max-width:100%; display:block}
   border-radius:14px;
 }
 
-/* =========================================================
-   NAV MOBILE — VERSION FULLSCREEN PREMIUM
-   (tu gardes tes classes .burger / .nav / .nav-link)
-========================================================= */
-@media (max-width: 760px){
 
-  /* menu overlay */
-  .nav{
-    inset:0;
-    display:flex;                /* on garde flex */
-    flex-direction:column;
-    gap:10px;
-
-    padding: calc(78px + 16px) 18px 18px;
-    border-radius: 0;
-    border:none;
-
-    background:
-      radial-gradient(900px 520px at 20% 20%, rgba(54,193,210,.20), transparent 60%),
-      radial-gradient(900px 520px at 85% 30%, rgba(31,159,176,.18), transparent 62%),
-      rgba(0,0,0,.92);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    box-shadow: none;
-
-    /* état fermé */
-    opacity:0;
-    pointer-events:none;
-    transform: translateY(-12px);
-    transition: .28s ease;
-  }
-
-  /* état ouvert */
-  .nav.is-open{
-    opacity:1;
-    pointer-events:auto;
-    transform: translateY(0);
-  }
-
-  /* liens plus “touch friendly” */
-  .nav-link{
-    width:100%;
-    padding:14px 14px;
-    border-radius:16px;
-    background: rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.10);
-    color: rgba(255,255,255,.92);
-    font-size:.95rem;
-  }
-  .nav-link:hover{
-    background: rgba(54,193,210,.10);
-    border-color: rgba(54,193,210,.28);
-  }
-
-  /* active plus visible */
-  .nav-link.is-active{
-    color:#fff;
-    background: rgba(54,193,210,.14);
-    border-color: rgba(54,193,210,.35);
-  }
-
-  /* socials en bas du menu */
-  .nav-socials{
-    margin-top:10px;
-    padding-top:14px;
-    border-top:1px solid rgba(255,255,255,.10);
-    justify-content:flex-start;
-    gap:14px;
-  }
-  .nav-social{
-    width:44px;
-    height:44px;
-    border-radius:16px;
-    background: rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.10);
-  }
-  .nav-icon{width:18px;height:18px}
-
-  /* burger au-dessus */
-  .site-header{z-index:999;}
-}
-
-/* petit “lock scroll” quand menu ouvert (ajoute body.nav-open en JS si tu veux) */
-body.nav-open{overflow:hidden;}
 
 /* =========================================================
    HERO — TITRE + GLASS NOTE + MEDIA CINÉ
@@ -1089,45 +1004,6 @@ body.nav-open{overflow:hidden;}
   border-color: rgba(54,193,210,.42);
 }
 
-/* 9) MOBILE NAV : full-screen premium SANS casser ton .nav.is-open */
-@media (max-width: 760px){
-  .nav{
-    background:
-      radial-gradient(900px 540px at 18% 20%, rgba(54,193,210,.18), transparent 60%),
-      radial-gradient(900px 540px at 85% 30%, rgba(31,159,176,.16), transparent 62%),
-      rgba(0,0,0,.92);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-  }
-
-  .nav-link{
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.10);
-  }
-  .nav-link:hover{
-    background: rgba(54,193,210,.10);
-    border-color: rgba(54,193,210,.28);
-  }
-  .nav-link.is-active{
-    background: rgba(54,193,210,.14);
-    border-color: rgba(54,193,210,.35);
-    color:#fff;
-  }
-
-  .nav-social{
-    width: 42px;
-    height: 42px;
-    border-radius: 16px;
-    display:grid;
-    place-items:center;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.10);
-  }
-  .nav-social:hover{
-    background: rgba(54,193,210,.10);
-    border-color: rgba(54,193,210,.28);
-  }
-}
 
 /* 10) Responsive hero : meilleur équilibre */
 @media (max-width: 980px){
@@ -1282,4 +1158,41 @@ body.nav-open{overflow:hidden;}
   width:100%;
   height:100%;
   object-fit:contain;
+}
+
+
+
+@media (max-width: 760px){
+  .burger{display:block}
+
+  .nav{
+    position:fixed !important;
+    inset:78px 16px auto 16px !important;
+    display:none !important;
+    flex-direction:column;
+    gap:10px;
+    padding:14px;
+    border-radius:18px !important;
+    background:rgba(0,0,0,.92) !important;
+    border:1px solid var(--line) !important;
+    box-shadow:var(--shadow) !important;
+  }
+
+  .nav.is-open{
+    display:flex !important;
+  }
+
+  .nav-link{
+    width:100%;
+    text-align:left;
+    color:rgba(255,255,255,.75) !important;
+    background:transparent !important;
+    border:none !important;
+  }
+
+  .nav-link:hover,
+  .nav-link.is-active{
+    color:var(--green) !important;
+    background:rgba(255,255,255,.06) !important;
+  }
 }
