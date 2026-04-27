@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Season — Jimmy Helias</title>
+  <meta name="description" content="Calendrier et saison de Jimmy Helias." />
+  <link rel="stylesheet" href="assets/css/season.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Accueil">
+      <img class="brand-logo" src="assets/img/JH_NEON.png" alt="H88" />
+      <span class="brand-name">JIMMY HELIAS</span>
+    </a>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="nav-link" href="index.html">Acceuil</a>
+      <a class="nav-link" href="biography.html">Biographie</a>
+      <a class="nav-link" href="news.html">Actualités</a>
+      <a class="nav-link is-active" href="season.html">Saison</a>
+      <a class="nav-link" href="shop.html">La boutique</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+
+       <div class="nav-socials" aria-label="Réseaux sociaux">
+    <a class="nav-social" href="https://www.instagram.com/jimmy.helias/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/>
+      </svg>
+    </a>
+
+    <a class="nav-social" href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+      <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+        <path d="M18.9 2H22l-7.2 8.2L23 22h-6.4l-5-6.1L6.2 22H3l7.7-8.9L1 2h6.6l4.6 5.6L18.9 2z"/>
+      </svg>
+    </a>
+  </div>
+
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO SEASON (F1) ================= -->
+  <section class="seasonHero" id="top">
+    <div class="seasonHero-bg" aria-hidden="true"></div>
+    <div class="seasonHero-noise" aria-hidden="true"></div>
+    <div class="container seasonHero-grid">
+
+      <div class="seasonHero-left reveal">
+        <span class="pill">Race Week • Season 2025</span>
+
+        <h1 class="heroTitle">
+          SEASON
+          <span class="heroTitle-accent">MODE</span>
+        </h1>
+
+        <p class="heroLead">
+          Calendrier, objectifs, stats et moments clés — une saison construite
+          comme un week-end F1 : préparation, exécution, progression.
+        </p>
+
+        <div class="heroStats">
+          <div class="statCard">
+            <span class="statKpi" data-counter="12">0</span>
+            <span class="statLabel">Rounds</span>
+          </div>
+          <div class="statCard">
+            <span class="statKpi" data-counter="3">0</span>
+            <span class="statLabel">Courses / week-end</span>
+          </div>
+          <div class="statCard">
+            <span class="statKpi" data-counter="1">0</span>
+            <span class="statLabel">Objectif : Podiums</span>
+          </div>
+        </div>
+
+        <div class="heroCTA">
+          <a class="btn btn-primary" href="#calendar">Voir le calendrier</a>
+          <a class="btn btn-ghost" href="#goals">Objectifs</a>
+        </div>
+
+        <div class="heroTicker" aria-label="Info course">
+          <span class="dot"></span>
+          <span><b>Next:</b> Circuit — Date • <b>Session:</b> Qualifying</span>
+        </div>
+      </div>
+
+      <div class="seasonHero-right reveal reveal--right">
+        <div class="trackCard">
+          <div class="trackTop">
+            <span class="tag">Circuit Spotlight</span>
+            <span class="chip">DRS ON</span>
+          </div>
+
+          <h3 class="trackTitle">Prochain Circuit</h3>
+          <p class="meta">Ajoute ici un mini texte : météo, virage clé, objectif.</p>
+
+          <div class="trackGrid">
+            <div class="trackMini">
+              <span class="miniLabel">Virage clé</span>
+              <span class="miniValue">T3 • Late Apex</span>
+            </div>
+            <div class="trackMini">
+              <span class="miniLabel">Set-up</span>
+              <span class="miniValue">Low Drag</span>
+            </div>
+            <div class="trackMini">
+              <span class="miniLabel">Départ</span>
+              <span class="miniValue">Focus Launch</span>
+            </div>
+            <div class="trackMini">
+              <span class="miniLabel">Objectif</span>
+              <span class="miniValue">Top 10</span>
+            </div>
+          </div>
+
+          <div class="trackMap" aria-hidden="true">
+            <div class="mapLine"></div>
+            <div class="mapDot d1"></div>
+            <div class="mapDot d2"></div>
+            <div class="mapDot d3"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= GOALS + PROGRESS ================= -->
+  <section class="section alt" id="goals">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <h2>Objectifs</h2>
+        <p>Une saison = un plan. Comme en F1 : data, constance, exécution.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="panel reveal">
+          <span class="tag">Focus</span>
+          <h3>Régularité</h3>
+          <p class="meta">Finir, apprendre, transformer chaque course en points.</p>
+          <div class="miniBar">
+            <div class="miniBarFill" style="width:72%"></div>
+          </div>
+          <p class="miniHint">Consistency index</p>
+        </div>
+
+        <div class="panel reveal">
+          <span class="tag">Performance</span>
+          <h3>Qualifying Pace</h3>
+          <p class="meta">La position en grille change tout : stratégie & départ.</p>
+          <div class="miniBar">
+            <div class="miniBarFill" style="width:58%"></div>
+          </div>
+          <p class="miniHint">One-lap speed</p>
+        </div>
+
+        <div class="panel reveal">
+          <span class="tag">Mental</span>
+          <h3>Racecraft</h3>
+          <p class="meta">Dépassements propres, gestion pneus, calme sous pression.</p>
+          <div class="miniBar">
+            <div class="miniBarFill" style="width:64%"></div>
+          </div>
+          <p class="miniHint">Decision making</p>
+        </div>
+      </div>
+
+      <div class="progressWrap reveal">
+        <div class="progressHead">
+          <h3>Objectif Points</h3>
+          <span class="progressValue"><b id="ptsNow">18</b> / <span id="ptsGoal">60</span> pts</span>
+        </div>
+        <div class="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="60" aria-valuenow="18">
+          <div class="progressFill" id="progressFill" style="width:30%"></div>
+        </div>
+        <p class="meta">Modifie les valeurs dans le script en bas : points actuels & objectif.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CALENDAR ================= -->
+  <section class="section" id="calendar">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <h2>Calendrier</h2>
+        <p>Rounds & résultats. Style “paddock pass” : clair, premium, efficace.</p>
+      </div>
+
+      <div class="seasonGrid">
+        <!-- Round card -->
+        <article class="roundCard reveal upcoming">
+          <div class="roundTop">
+            <span class="roundTag">Round 1</span>
+            <span class="status">UPCOMING</span>
+          </div>
+          <h3>Circuit — Date</h3>
+
+          <div class="roundRows">
+            <div class="row"><span>Quali</span><b>—</b></div>
+            <div class="row"><span>Race 1</span><b>—</b></div>
+            <div class="row"><span>Race 2</span><b>—</b></div>
+          </div>
+
+          <div class="roundFoot">
+            <span class="chip">DRS</span>
+            <span class="chip">Data</span>
+            <span class="chip">Launch</span>
+          </div>
+        </article>
+
+        <article class="roundCard reveal">
+          <div class="roundTop">
+            <span class="roundTag">Round 2</span>
+            <span class="status done">DONE</span>
+          </div>
+          <h3>Circuit — Date</h3>
+
+          <div class="roundRows">
+            <div class="row"><span>Quali</span><b>P8</b></div>
+            <div class="row"><span>Race 1</span><b>P6</b></div>
+            <div class="row"><span>Race 2</span><b>P7</b></div>
+          </div>
+
+          <div class="roundFoot">
+            <span class="chip">Overtake</span>
+            <span class="chip">Tyres</span>
+            <span class="chip">Pace</span>
+          </div>
+        </article>
+
+        <article class="roundCard reveal">
+          <div class="roundTop">
+            <span class="roundTag">Round 3</span>
+            <span class="status live">LIVE</span>
+          </div>
+          <h3>Circuit — Date</h3>
+
+          <div class="roundRows">
+            <div class="row"><span>Quali</span><b>P5</b></div>
+            <div class="row"><span>Race 1</span><b>—</b></div>
+            <div class="row"><span>Race 2</span><b>—</b></div>
+          </div>
+
+          <div class="roundFoot">
+            <span class="chip">Push</span>
+            <span class="chip">Traffic</span>
+            <span class="chip">Strategy</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE WEEK-END ================= -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Week-end type</h2>
+        <p>Comme en F1 : préparation → quali → course → débrief.</p>
+      </div>
+
+      <div class="weekend reveal">
+        <div class="step">
+          <span class="stepN">01</span>
+          <div>
+            <h3>Track Walk</h3>
+            <p class="meta">Repères freinage, virages clés, zones de dépassement.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="stepN">02</span>
+          <div>
+            <h3>Data & Setup</h3>
+            <p class="meta">Aéro, pression pneus, balance, trajectoires.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="stepN">03</span>
+          <div>
+            <h3>Qualifying</h3>
+            <p class="meta">Un tour parfait : température, trafic, timing.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="stepN">04</span>
+          <div>
+            <h3>Race</h3>
+            <p class="meta">Départ, rythme, gestion pneus, dépassements propres.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="stepN">05</span>
+          <div>
+            <h3>Debrief</h3>
+            <p class="meta">Analyse onboard, data, points à améliorer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MINI LEADERBOARD ================= -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <h2>Mini leaderboard</h2>
+        <p>Exemple de tableau (tu le rempliras avec les vrais standings).</p>
+      </div>
+
+      <div class="board reveal">
+        <div class="boardRow head">
+          <span>Pos</span><span>Pilote</span><span>Pts</span><span>Trend</span>
+        </div>
+
+        <div class="boardRow me">
+          <span>7</span><span>Jimmy Helias</span><span>18</span>
+          <span class="trend up">▲ +2</span>
+        </div>
+
+        <div class="boardRow">
+          <span>6</span><span>Driver X</span><span>22</span><span class="trend flat">—</span>
+        </div>
+
+        <div class="boardRow">
+          <span>8</span><span>Driver Y</span><span>16</span><span class="trend down">▼ -1</span>
+        </div>
+      </div>
+
+      <div class="ctaBox reveal">
+        <h3>Suivre la saison en temps réel</h3>
+        <p class="meta">Ajoute un lien vers tes posts / stories / résultats après chaque week-end.</p>
+        <div class="ctaBtns">
+          <a class="btn btn-primary" href="news.html">Voir les actus</a>
+          <a class="btn btn-ghost" href="contact.html">Partenariat</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>FAQ</h2>
+        <p>Quelques questions type “F1 fan / partenaire / presse”.</p>
+      </div>
+
+      <div class="faqGrid">
+        <details class="faq reveal">
+          <summary>Comment fonctionne un week-end de course ?</summary>
+          <p>Sessions + quali + courses. Le but : optimiser le rythme et la stratégie.</p>
+        </details>
+
+        <details class="faq reveal">
+          <summary>Comment tu travailles tes performances ?</summary>
+          <p>Data, vidéo onboard, préparation physique, mental, simulateur.</p>
+        </details>
+
+        <details class="faq reveal">
+          <summary>Comment devenir partenaire ?</summary>
+          <p>Contact via la page Contact : visibilité, activations, contenus.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Jimmy Helias — En route vers la F1</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // YEAR
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  // BURGER (si ton main.js ne le fait pas)
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav");
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  // REVEAL on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add("is-in");
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach((el, i) => {
+    el.style.setProperty("--d", `${i * 70}ms`);
+    el.setAttribute("data-delay", "1");
+    io.observe(el);
+  });
+
+  // COUNTERS
+  function animateCounter(el, to){
+    let start = 0;
+    const duration = 900;
+    const t0 = performance.now();
+
+    function tick(t){
+      const p = Math.min((t - t0) / duration, 1);
+      const val = Math.round(start + (to - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = val;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterEls = document.querySelectorAll("[data-counter]");
+  const io2 = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting){
+        const el = e.target;
+        animateCounter(el, parseInt(el.dataset.counter, 10) || 0);
+        io2.unobserve(el);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  counterEls.forEach(el => io2.observe(el));
+
+  // PROGRESS points
+  const now = 18;   // 👈 modifie ici
+  const goal = 60;  // 👈 modifie ici
+  const ptsNow = document.getElementById("ptsNow");
+  const ptsGoal = document.getElementById("ptsGoal");
+  const fill = document.getElementById("progressFill");
+
+  if (ptsNow && ptsGoal && fill) {
+    ptsNow.textContent = now;
+    ptsGoal.textContent = goal;
+    const pct = Math.max(0, Math.min(100, (now / goal) * 100));
+    fill.style.width = pct + "%";
+    const bar = document.querySelector(".progressBar");
+    if (bar) bar.setAttribute("aria-valuenow", String(now));
+  }
+</script>
+
+</body>
+</html>

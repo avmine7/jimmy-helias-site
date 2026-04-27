@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jimmy Helias</title>
+  <meta name="description" content="Site officiel de Jimmy Helias, pilote F4. En route vers la F1." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<script>
+  (function(){
+    const links = document.querySelectorAll('.gallerySection .galleryCard');
+    if(!links.length) return;
+
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.innerHTML = `
+      <button class="lb-close" aria-label="Fermer">×</button>
+      <img class="lb-img" alt="">
+    `;
+    document.body.appendChild(lb);
+
+    const img = lb.querySelector('.lb-img');
+    const closeBtn = lb.querySelector('.lb-close');
+
+    function open(src, alt){
+      img.src = src;
+      img.alt = alt || '';
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){
+      lb.classList.remove('is-open');
+      img.src = '';
+      document.body.style.overflow = '';
+    }
+
+    links.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const im = a.querySelector('img');
+        open(a.getAttribute('href') || im.src, im?.alt);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) close(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+  })();
+</script>
+
+
+<body>
+
+  <!-- ================= INTRO : F1 START LIGHTS ================= -->
+  <!-- ================= INTRO AVEC LOGO ================= -->
+<div id="introLuxe" aria-hidden="true">
+  <div class="luxe-bg" aria-hidden="true"></div>
+
+  <div class="luxe-center">
+    <img id="luxeLogo" src="assets/img/JH_NEON.png" alt="H88">
+    <div class="luxe-sub">EN ROUTE VERS LA F1</div>
+  </div>
+
+  <!-- orb glow qui voyage vers le titre -->
+  <div id="luxeOrb" aria-hidden="true"></div>
+
+  <!-- flash doux à l'arrivée -->
+  <div id="luxeFlash" aria-hidden="true"></div>
+</div>
+
+
+  <!-- ================= FIN INTRO : F1 START LIGHTS ================= -->
+
+
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Accueil">
+      <img class="brand-logo" src="assets/img/JH_NEON.png" alt="H88" />
+      <span class="brand-name">JIMMY HELIAS</span>
+    </a>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" aria-label="Navigation principale">
+  <a class="nav-link is-active" href="index.html">Acceuil</a>
+  <a class="nav-link" href="biography.html">Biographie</a>
+  <a class="nav-link" href="news.html">Actualités</a>
+  <a class="nav-link" href="season.html">Saison</a>
+  <a class="nav-link" href="shop.html">La boutique</a>
+  <a class="nav-link" href="contact.html">Contact</a>
+
+  <!--  Réseaux sociaux -->
+  <div class="nav-socials" aria-label="Réseaux sociaux">
+    <a class="nav-social" href="https://www.instagram.com/jimmy.helias/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/>
+      </svg>
+    </a>
+
+    <a class="nav-social" href="https://x.com/" target="_blank" rel="noopener" aria-label="X">
+      <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+        <path d="M18.9 2H22l-7.2 8.2L23 22h-6.4l-5-6.1L6.2 22H3l7.7-8.9L1 2h6.6l4.6 5.6L18.9 2z"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-cinematic" id="top">
+  <img
+    class="hero-bg-image"
+    src="assets/img/JimmyOmbre.png"
+    alt="Jimmy Helias – Pilote F4"
+  >
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="container hero-content hero-content--buttons-only">
+    <div class="hero-copy hero-copy--buttons-only">
+      <div class="actions hero-actions-only">
+        <a class="btn btn-primary" href="season.html">Voir la saison</a>
+        <a class="btn btn-outline" href="biography.html">Biographie</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="videos">
+  <div class="container videos-layout">
+
+    <!-- LEFT : videos -->
+    <div class="videos-left">
+
+      <div class="video-grid">
+        <div class="video-card">
+          <video src="assets/vdo/vdo1.mp4" autoplay muted loop playsinline></video>
+        </div>
+
+
+    <!-- RIGHT : season review -->
+    <aside class="season-review">
+      <span class="season-tag">Season Review</span>
+
+      <h3>SEASON REVIEW</h3>
+
+      <p>
+        Retour sur la saison : performances, progrès, moments forts
+        et enseignements clés d’une année de compétition intense.
+      </p>
+
+      <a href="season.html" class="btn btn-outline">
+        Voir la saison
+      </a>
+    </aside>
+
+  <div class="season-stats">
+  <div class="stat">
+    <div class="stat-top">
+      <span class="value">12</span>
+
+      <span class="stat-icoWrap">
+        <!-- Flag icon -->
+        <svg class="stat-ico" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 3v18M6 4h10l-1.2 3L18 10H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <span class="label">Courses</span>
+  </div>
+
+  <div class="stat">
+    <div class="stat-top">
+      <span class="value">3</span>
+
+      <span class="stat-icoWrap">
+        <!-- Podium icon -->
+        <svg class="stat-ico" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 20v-7h4v7M13 20V9h4v11M3 20h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <span class="label">Podiums</span>
+  </div>
+
+  <div class="stat">
+    <div class="stat-top">
+      <span class="value">1</span>
+
+      <span class="stat-icoWrap">
+        <!-- Trophy icon -->
+        <svg class="stat-ico" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 4h8v3a4 4 0 0 1-8 0V4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M10 14h4M9 20h6M12 14v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M8 6H5a2 2 0 0 0 2 3M16 6h3a2 2 0 0 1-2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <span class="label">Pole</span>
+  </div>
+
+  <div class="stat wide">
+    <div class="stat-top">
+      <span class="value">+18%</span>
+
+      <span class="stat-icoWrap">
+        <!-- Chart icon -->
+        <svg class="stat-ico big" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 19h16M7 16l3-4 3 2 4-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7 16v0M10 12v0M13 14v0M17 8v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </div>
+    <span class="label">Progression</span>
+  </div>
+</div>
+
+</section>
+
+
+
+  <!-- ================= À PROPOS ================= -->
+  <section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <h2>À propos</h2>
+      <p>Un pilote, une trajectoire, un objectif : progresser étape par étape vers l’élite.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <article class="about-card">
+        <div class="about-icoWrap">
+          <!-- Speed / Performance -->
+          <svg class="about-ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 13a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 13l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Performance</h3>
+        <p>Préparation, rigueur et travail au détail pour gagner des dixièmes.</p>
+      </article>
+
+      <article class="about-card">
+        <div class="about-icoWrap">
+          <!-- Target / Ambition -->
+          <svg class="about-ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21a9 9 0 1 1 9-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 17a5 5 0 1 1 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 13a1 1 0 1 1 0-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M14 10l7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Ambition</h3>
+        <p>Une progression construite sur des bases solides, saison après saison.</p>
+      </article>
+
+      <article class="about-card">
+        <div class="about-icoWrap">
+          <!-- Community -->
+          <svg class="about-ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 11a3 3 0 1 0-6 0c0 1.7 1.3 3 3 3s3-1.3 3-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M4 20c1.5-3 4.3-5 8-5s6.5 2 8 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6 9a2.5 2.5 0 1 0-5 0c0 1.4 1.1 2.5 2.5 2.5S6 10.4 6 9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M23 9a2.5 2.5 0 1 0-5 0c0 1.4 1.1 2.5 2.5 2.5S23 10.4 23 9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Communauté</h3>
+        <p>Vivre l’aventure ensemble : actus, coulisses, événements, shop.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= gallery ================= -->
+
+<section class="section gallerySection" id="gallery">
+  <div class="container galleryLayout">
+
+    <!-- LEFT (sticky) -->
+    <div class="galleryLeft">
+      <div class="galleryHead">
+        <h2 class="galleryTitle">GALLERY</h2>
+        <p class="galleryKicker">L’instant, le travail, la progression.</p>
+
+        <blockquote class="galleryQuote">
+          <span class="quoteBar" aria-hidden="true"></span>
+          <p>
+            De la préparation physique et mentale aux week-ends de course, chaque saison est pensée comme une étape essentielle,
+            où l’exigence, la discipline et la performance construisent une progression cohérente vers le très haut niveau.
+          </p>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- RIGHT (grid) -->
+    <div class="galleryRight">
+     <div class="galleryGrid galleryGrid--mag">
+
+  <a class="galleryCard g2" href="assets/img/Dos.JPG">
+    <img src="assets/img/Dos.JPG" alt="Jimmy Helias casque" />
+  </a>
+
+  <a class="galleryCard g3" href="assets/img/Voiture4.JPG">
+    <img src="assets/img/Voiture4.JPG" alt="Jimmy Helias portrait kart" />
+  </a>
+
+  <!--  IMAGE AJOUTÉE ICI POUR COMBLER LE TROU -->
+  <a class="galleryCard g7" href="assets/img/file.JPG">
+    <img src="assets/img/file.JPG" alt="Jimmy Helias en course" />
+  </a>
+
+  <a class="galleryCard g4" href="assets/img/EnfileCasque.JPG">
+    <img src="assets/img/EnfileCasque.JPG" alt="Jimmy Helias en piste" />
+  </a>
+
+  <a class="galleryCard g5" href="assets/img/VoitureDepart.JPG">
+    <img src="assets/img/VoitureDepart.JPG" alt="Jimmy Helias podium" />
+  </a>
+
+  <a class="galleryCard g6" href="assets/img/EnfileCasque.JPG">
+    <img src="assets/img/EnfileCasque.JPG" alt="Jimmy Helias trophée" />
+  </a>
+
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ================= FOCUS ================= -->
+  <!-- ================= FOCUS ================= -->
+<section class="section focusSection" id="focus">
+  <div class="focusBg" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="focusHead">
+      <h2 class="focusTitle">FOCUS</h2>
+      <p class="focusSubtitle">Les accès rapides aux essentiels.</p>
+    </div>
+
+    <div class="focusGrid">
+
+      <!-- NEWS -->
+      <article class="focusCard">
+        <div class="focusTop">
+          <span class="focusTag">NEWS</span>
+
+          <svg class="focusIco" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 7h10M7 11h10M7 15h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6 4h12a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+              fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h3>Dernières actualités</h3>
+        <p>Résultats, annonces officielles, photos exclusives et temps forts de course.</p>
+        <a class="focusBtn" href="news.html">Voir les actus</a>
+      </article>
+
+      <!-- SEASON -->
+      <article class="focusCard">
+        <div class="focusTop">
+          <span class="focusTag">SEASON</span>
+
+          <svg class="focusIco" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 19h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M7 16l3-4 3 2 4-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h3>Suivi de saison</h3>
+        <p>Calendrier, objectifs, performances et progression course après course.</p>
+        <a class="focusBtn" href="season.html">Voir la saison</a>
+      </article>
+
+      <!-- SHOP -->
+      <article class="focusCard">
+        <div class="focusTop">
+          <span class="focusTag">SHOP</span>
+
+          <svg class="focusIco" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9 8a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h3>La boutique</h3>
+        <p>Merch officiel : casquettes, hoodies, accessoires — bientôt disponibles.</p>
+        <a class="focusBtn" href="shop.html">Accéder au shop</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- partenaires -->
+
+<section class="partnersSection">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Partenaires</h2>
+      <p>Ils accompagnent Jimmy Helias dans son parcours vers la F1</p>
+    </div>
+
+    <div class="partnersWrapper">
+      <div class="partnersTrack">
+
+        <!-- PARTENAIRE -->
+        <div class="partnerLogo">
+          <img src="assets/img/partners/crgfrance.png" alt="CRG" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/iame.png" alt="IAME" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/kartrepublic.png" alt="Kart Republic" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/moetchandon.png" alt="Moët & Chandon" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/simumotion.png" alt="SimuMotion" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/sportavie.png" alt="SportAviE" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/victorylanekarting.png" alt="Victory Lane Karting" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/voyage.png" alt="Voyage" />
+        </div>
+
+        <div class="partnerLogo">
+          <img src="assets/img/partners/youme.png" alt="YouMe Sport" />
+        </div>
+
+        <!-- DUPLICATION POUR SCROLL INFINI -->
+        <div class="partnerLogo">
+          <img src="assets/img/partners/crgfrance.png" alt="CRG" />
+        </div>
+        <div class="partnerLogo">
+          <img src="assets/img/partners/iame.png" alt="IAME" />
+        </div>
+        <div class="partnerLogo">
+          <img src="assets/img/partners/kartrepublic.png" alt="Kart Republic" />
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Jimmy Helias — En route vers la F1</p>
+    <div class="footer-links">
+      <a href="contact.html">Contact</a>
+      <a href="#top">Haut de page ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+
+
+<script>
+(() => {
+  const intro = document.getElementById("introLuxe");
+  const logo  = document.getElementById("luxeLogo");
+  const orb   = document.getElementById("luxeOrb");
+  const flash = document.getElementById("luxeFlash");
+  const target = document.getElementById("heroTitle");
+
+  document.body.classList.add("intro-lock");
+
+  const px = n => `${Math.round(n)}px`;
+
+  function exitClean(){
+    document.body.classList.remove("intro-lock");
+    document.body.classList.add("intro-reveal");
+    intro.classList.add("is-out");
+    setTimeout(() => intro.remove(), 700);
+  }
+
+  window.addEventListener("load", () => {
+    if(!target){
+      console.warn("[IntroLuxe] Ajoute id='heroTitle' sur ton H1.");
+      setTimeout(exitClean, 1200);
+      return;
+    }
+
+    // pause courte pour laisser respirer le logo
+    setTimeout(() => {
+      const rLogo = logo.getBoundingClientRect();
+      const rT = target.getBoundingClientRect();
+
+      // départ : centre logo
+      const startX = rLogo.left + rLogo.width / 2;
+      const startY = rLogo.top  + rLogo.height / 2;
+
+      // arrivée : sur le titre (zone “haut gauche” élégante)
+      const endX = rT.left + Math.min(92, rT.width * 0.22);
+      const endY = rT.top  + Math.min(38, rT.height * 0.45);
+
+      // placer orb au départ
+      orb.style.left = px(startX - 9);
+      orb.style.top  = px(startY - 9);
+      orb.style.opacity = "1";
+
+      // logo se fond délicatement
+      logo.animate([
+        { opacity: 1, transform: "translateY(0) scale(1)", filter:"drop-shadow(0 0 22px rgba(24,194,125,.22))" },
+        { opacity: 0, transform: "translateY(0) scale(.985)", filter:"drop-shadow(0 0 0 rgba(24,194,125,0))" }
+      ], { duration: 520, easing: "cubic-bezier(.2,1,.2,1)", fill: "forwards" });
+
+      // trajectoire : courbe subtile (très luxe)
+      const midX = (startX + endX)/2 + 80;
+      const midY = (startY + endY)/2 - 60;
+
+      // travel orb
+      orb.animate([
+        { left: px(startX - 9), top: px(startY - 9), transform:"scale(1.0)" },
+        { left: px(midX   - 9), top: px(midY   - 9), transform:"scale(1.55)" },
+        { left: px(endX   - 9), top: px(endY   - 9), transform:"scale(1.10)" }
+      ], { duration: 1050, easing: "cubic-bezier(.2,1,.2,1)", fill: "forwards" });
+
+      // pulsation douce (pas agressive)
+      orb.animate([
+        { boxShadow:"0 0 14px rgba(24,194,125,.55), 0 0 46px rgba(24,194,125,.18)" },
+        { boxShadow:"0 0 20px rgba(24,194,125,.70), 0 0 70px rgba(24,194,125,.22)" },
+        { boxShadow:"0 0 14px rgba(24,194,125,.55), 0 0 46px rgba(24,194,125,.18)" }
+      ], { duration: 1050, easing:"ease-in-out", fill:"forwards" });
+
+      // arrivée : flash doux + halo sur titre + orb qui se dissout
+      setTimeout(() => {
+        flash.style.setProperty("--fx", px(endX));
+        flash.style.setProperty("--fy", px(endY));
+        flash.animate([{opacity:0},{opacity:1},{opacity:0}], {
+          duration: 420, easing:"ease-out", fill:"forwards"
+        });
+
+        target.animate([
+          { filter:"drop-shadow(0 0 0 rgba(24,194,125,0))" },
+          { filter:"drop-shadow(0 0 22px rgba(24,194,125,.35))" },
+          { filter:"drop-shadow(0 0 0 rgba(24,194,125,0))" }
+        ], { duration: 520, easing:"cubic-bezier(.2,1,.2,1)" });
+
+        orb.animate([
+          { opacity:1, transform:"scale(1.10)" },
+          { opacity:0, transform:"scale(2.0)" }
+        ], { duration: 520, easing:"ease-out", fill:"forwards" });
+
+      }, 980);
+
+      // sortie + reveal
+      setTimeout(exitClean, 1450);
+
+    }, 650);
+  });
+})();
+</script>
+
+
+</body>
+</html>

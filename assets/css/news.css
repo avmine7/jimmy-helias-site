@@ -1,0 +1,1285 @@
+/* =========================================================
+   news.css — STYLE COMPLET (page News uniquement) — ALIGNÉ BIOGRAPHY
+   Jimmy Helias — "En route vers la F1"
+   ✅ Même navbar que index/biography (mêmes classes/approche)
+   ✅ Fond “wow” bleu + profondeur + animation bgFloat
+   ✅ Hero News premium (video + cadre + badge)
+   ✅ Cards / Panels / Feed cohérents + hover clean
+========================================================= */
+
+/* ===================== THEME ===================== */
+:root{
+  --bg:#021018;
+  --bg2:#041a24;
+  --bg3:#063040;
+
+  --text:#f4f5f2;
+  --muted:rgba(244,245,242,.72);
+
+  --line:rgba(120,255,255,.55);
+
+  --green:#78ffff;   /* BLEU ULTRA CLAIR */
+  --green2:#3df5ff;
+  --green3:#00d9ff;
+
+  --greenGlow: rgba(120,255,255,.85);
+  --greenSoft: rgba(120,255,255,.30);
+
+  --shadow: 0 18px 55px rgba(0,0,0,.45);
+  --radius: 18px;
+  --max: 1180px;
+}
+
+/* ===================== BASE ===================== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+
+  background:
+    radial-gradient(1200px 700px at 18% 18%, rgba(120,255,255,.75), transparent 60%),
+    radial-gradient(900px 560px at 85% 28%, rgba(61,245,255,.60), transparent 60%),
+    radial-gradient(900px 650px at 50% 120%, rgba(0,217,255,.45), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.45)),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 45%, var(--bg3) 100%);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 25% 20%, rgba(120,255,255,.30), transparent 70%),
+    radial-gradient(850px 520px at 80% 35%, rgba(255,255,255,.12), transparent 72%),
+    radial-gradient(900px 700px at 50% 110%, rgba(61,245,255,.25), transparent 70%);
+  filter: blur(12px);
+  opacity:.95;
+  animation: bgFloat 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgFloat{
+  from{ transform: translate3d(-1%, -1%, 0) scale(1); }
+  to  { transform: translate3d(1%, 1%, 0) scale(1.02); }
+}
+
+a{color:inherit; text-decoration:none}
+img{max-width:100%; display:block}
+.container{width:min(var(--max), calc(100% - 48px)); margin-inline:auto}
+
+::selection{background:rgba(54,193,210,.22)}
+
+/* ================= SECTIONS ================= */
+.section{padding:70px 0}
+.section.alt{
+  background: rgba(255,255,255,.03);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.section-head{margin-bottom:22px}
+.section-head h2{
+  margin:0 0 10px;
+  font-size:1.8rem;
+  letter-spacing:-.02em
+}
+.section-head p{
+  margin:0;
+  color:var(--muted);
+  max-width:75ch;
+  line-height:1.8;
+}
+
+/* ================= GRID ================= */
+.grid2{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:18px;
+}
+.grid3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:18px;
+}
+
+/* ================= HEADER (IDENTIQUE BIO/INDEX) ================= */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:950;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+.brand-logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  filter: drop-shadow(0 12px 25px rgba(0,0,0,.45));
+}
+.brand-name{font-size:1rem; opacity:.95}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.nav-link{
+  font-weight:850;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+  padding:10px;
+  border-radius:12px;
+  transition:.2s ease;
+}
+.nav-link:hover{
+  color:#fff;
+  background:rgba(255,255,255,.06)
+}
+.nav-link.is-active{color:var(--green)}
+
+.burger{
+  display:none;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  cursor:pointer;
+}
+.burger span{
+  display:block;
+  width:20px;
+  height:2px;
+  background: var(--text);
+  margin:4px auto;
+  border-radius:999px;
+}
+
+/* Social icons in navbar */
+.nav-socials{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-left:14px;
+  padding-left:14px;
+  border-left:1px solid rgba(255,255,255,.12);
+}
+.nav-social{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+}
+.nav-icon{
+  width:18px;
+  height:18px;
+  fill: currentColor;
+  color: rgba(244,245,242,.72);
+  transition: transform .2s ease, color .2s ease, opacity .2s ease;
+  opacity:.9;
+}
+.nav-social:hover .nav-icon{
+  color: var(--green);
+  transform: translateY(-2px);
+  opacity:1;
+}
+
+/* Option : ajuster la séparation socials sur mobile */
+@media (max-width: 900px){
+  .nav-socials{ border-left:0; padding-left:0; margin-left:0; }
+}
+
+/* Responsive nav */
+@media (max-width: 760px){
+  .burger{display:block}
+  .nav{
+    position:fixed;
+    inset:78px 16px auto 16px;
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    padding:14px;
+    border-radius:18px;
+    background: rgba(0,0,0,.92);
+    border:1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+  .nav.is-open{display:flex}
+  .nav-link{ width:100%; text-align:left }
+}
+
+/* ================= BUTTONS (cohérents) ================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.92);
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+}
+.btn:hover{
+  transform: translateY(-2px);
+  border-color: rgba(54,193,210,.35);
+  background: rgba(54,193,210,.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+.btn-outline{
+  background: transparent;
+  border-color: rgba(255,255,255,.12);
+}
+.btn-outline:hover{
+  border-color: rgba(54,193,210,.38);
+  background: rgba(54,193,210,.08);
+}
+
+/* ================= TAG ================= */
+.tag{
+  display:inline-flex;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid rgba(54,193,210,.38);
+  background: rgba(54,193,210,.12);
+  color: rgba(255,255,255,.92);
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+
+/* =========================================================
+   NEWS HERO (WOW)
+========================================================= */
+.newsHero{
+  position:relative;
+  padding:68px 0 40px;
+  overflow:hidden;
+}
+
+.newsHero-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(1100px 650px at 18% 20%, rgba(54,193,210,.20), transparent 60%),
+    radial-gradient(900px 520px at 85% 30%, rgba(31,159,176,.18), transparent 62%),
+    linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.12), rgba(0,0,0,.72));
+}
+
+.newsHero-noise{
+  position:absolute;
+  inset:-22%;
+  pointer-events:none;
+  opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  transform:rotate(-6deg);
+}
+
+.newsHero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:42px;
+  align-items:center;
+}
+
+.newsHero-left{
+  max-width:720px;
+}
+
+.newsHero-left h1{
+  margin:16px 0 10px;
+  font-size: clamp(3rem, 6vw, 4.4rem);
+  letter-spacing:-.05em;
+  line-height:.95;
+  text-transform:uppercase;
+  font-weight:1000;
+  text-shadow:
+    0 10px 28px rgba(0,0,0,.45),
+    0 0 18px rgba(54,193,210,.10);
+}
+
+.newsHero-sub{
+  margin:0;
+  max-width:60ch;
+  color:var(--muted);
+  line-height:1.85;
+  font-size:1.05rem;
+}
+
+.newsHero-cta{
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.newsHero-note{
+  margin-top:18px;
+  padding:14px 16px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: rgba(244,245,242,.80);
+  line-height:1.7;
+  font-style:italic;
+  max-width:680px;
+}
+
+/* RIGHT PHOTO */
+.newsHero-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.newsHero-photoCard{
+  position:relative;
+  width:min(420px, 100%);
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 45px 130px rgba(0,0,0,.80);
+  background:#000;
+}
+
+.newsHero-photoCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(520px 520px at 30% 18%, rgba(54,193,210,.22), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.20));
+  pointer-events:none;
+  mix-blend-mode:screen;
+  opacity:.9;
+}
+
+.newsHero-photoCard::after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.10);
+  pointer-events:none;
+  opacity:.9;
+}
+
+.newsHero-photo{
+  width:100%;
+  display:block;
+  aspect-ratio: 4 / 5;
+  object-fit:cover;
+  object-position:center top;
+  transform: scale(1.02);
+  filter: saturate(1.04) contrast(1.03);
+}
+
+.newsHero-photoGlow{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(720px 520px at 70% 30%, rgba(54,193,210,.14), transparent 62%);
+  pointer-events:none;
+  opacity:.85;
+}
+
+/* on neutralise l'ancien live paddock */
+.newsHero-media,
+.newsHero-video,
+.newsHero-fallback,
+.newsHero-glow,
+.newsHero-badge,
+.badgeDot{
+  display:none;
+}
+
+@media (max-width: 980px){
+  .newsHero-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+    align-items:start;
+  }
+
+  .newsHero-left{
+    max-width:100%;
+  }
+
+  .newsHero-right{
+    justify-content:flex-start;
+  }
+
+  .newsHero-photoCard{
+    width:min(360px, 100%);
+  }
+}
+
+@media (max-width: 640px){
+  .newsHero{
+    padding:56px 0 30px;
+  }
+
+  .newsHero-left h1{
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+  }
+
+  .newsHero-cta{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .newsHero-cta .btn{
+    width:100%;
+  }
+
+  .newsHero-photoCard{
+    width:100%;
+  }
+}
+
+/* ================= PANELS / CARDS ================= */
+.panel{
+  position:relative;
+  padding:26px 24px;
+  border-radius: calc(var(--radius) + 6px);
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(420px 280px at 20% 18%, rgba(54,193,210,.12), transparent 62%),
+    rgba(255,255,255,.02);
+  box-shadow: 0 28px 85px rgba(0,0,0,.62);
+  overflow:hidden;
+}
+.panel::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.10), transparent 65%);
+  opacity:.08;
+  pointer-events:none;
+}
+
+.card{
+  position:relative;
+  border-radius: 22px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(360px 240px at 20% 20%, rgba(54,193,210,.10), transparent 60%),
+    rgba(255,255,255,.02);
+  box-shadow: 0 30px 90px rgba(0,0,0,.65);
+  padding:20px 18px;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  overflow:hidden;
+}
+.card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(54,193,210,.30);
+  box-shadow: 0 45px 130px rgba(0,0,0,.82);
+}
+.card h3{
+  margin:10px 0 8px;
+  font-size:1.2rem;
+  letter-spacing:-.01em;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.75;
+}
+
+.panel, .card{
+  border-color: rgba(54,193,210,.18);
+}
+
+/* ================= POSTS (logbook) ================= */
+.postCard{
+  position:relative;
+  padding-left:56px;
+}
+.postCard::before{
+  content:"";
+  position:absolute;
+  left:26px;
+  top:24px;
+  bottom:24px;
+  width:2px;
+  background: linear-gradient(to bottom, rgba(54,193,210,.55), rgba(54,193,210,.08));
+  border-radius:99px;
+  opacity:.9;
+}
+.postCard::after{
+  content:"";
+  position:absolute;
+  left:22px;
+  top:28px;
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background: rgba(54,193,210,.95);
+  box-shadow: 0 0 0 5px rgba(54,193,210,.18), 0 18px 55px rgba(0,0,0,.55);
+}
+.postTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.meta{
+  margin:12px 0 0;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:.95rem;
+}
+.postActions{
+  margin-top:14px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* ================= FEED ================= */
+.newsFeed{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:18px;
+  margin-top:18px;
+}
+
+/* ================= FOOTER (cohérent) ================= */
+.footer{
+  border-top:1px solid var(--line);
+  padding:22px 0;
+  color:var(--muted);
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.footer-links{ display:flex; gap:12px }
+.footer-links a:hover{ text-decoration:underline }
+
+/* ================= RESPONSIVE NEWS ================= */
+@media (max-width: 980px){
+  .newsHero-grid{ grid-template-columns:1fr; }
+  .grid3{ grid-template-columns:1fr; }
+  .grid2{ grid-template-columns:1fr; }
+  .newsFeed{ grid-template-columns:1fr; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body::before{ animation:none; }
+  .newsHero-video{ display:none; }
+  .newsHero-fallback{ opacity:1; position:relative; }
+}
+
+/* fallback video si pas de src */
+.newsHero-video:not([src]) + .newsHero-fallback{ opacity:1; }
+
+/* ================= SCROLL REVEAL (si tu l’utilises) ================= */
+.reveal{
+  opacity:0;
+  transform: translateY(18px) scale(.985);
+  filter: blur(6px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.2,.8,.2,1),
+    filter .75s ease;
+  will-change: transform, opacity, filter;
+}
+.reveal.is-in{
+  opacity:1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+.reveal[data-delay]{ transition-delay: var(--d, 0ms); }
+.reveal--up{ transform: translateY(22px) }
+.reveal--left{ transform: translateX(-22px) }
+.reveal--right{ transform: translateX(22px) }
+.reveal--zoom{ transform: scale(.96) }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity:1 !important;
+    transform:none !important;
+    filter:none !important;
+    transition:none !important;
+  }
+}
+
+.featuredPost{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:28px;
+  align-items:center;
+  padding:26px;
+  border-radius:28px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  box-shadow:0 45px 130px rgba(0,0,0,.75);
+}
+
+.featuredMedia{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.featuredMedia img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.featuredBadge{
+  position:absolute;
+  top:14px;
+  left:14px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(0,0,0,.65);
+  border:1px solid var(--line);
+  font-weight:900;
+  letter-spacing:.12em;
+  font-size:.75rem;
+}
+
+.featuredContent h2{
+  margin:14px 0 10px;
+  font-size:1.9rem;
+}
+
+@media (max-width: 900px){
+  .featuredPost{grid-template-columns:1fr}
+}
+
+/* =========================================================
+   PATCH ULTRA PREMIUM (sans casser ton thème)
+   - mobile nav full-screen + blur + animation
+   - hero h1 plus F1 (gradient + glow)
+   - media plus ciné (vignette + contraste + cadre)
+   - cards/panels plus clean (hover + profondeur + lisibilité)
+   - accessibilité + focus + mobile spacing
+========================================================= */
+
+/* ---------- base confort mobile ---------- */
+.container{width:min(var(--max), calc(100% - 40px));}
+@media (max-width: 520px){
+  .container{width:min(var(--max), calc(100% - 28px));}
+}
+
+/* ---------- focus accessible ---------- */
+:focus-visible{
+  outline:2px solid rgba(54,193,210,.65);
+  outline-offset:3px;
+  border-radius:14px;
+}
+
+/* =========================================================
+   NAV MOBILE — VERSION FULLSCREEN PREMIUM
+   (tu gardes tes classes .burger / .nav / .nav-link)
+========================================================= */
+@media (max-width: 760px){
+
+  /* menu overlay */
+  .nav{
+    inset:0;
+    display:flex;                /* on garde flex */
+    flex-direction:column;
+    gap:10px;
+
+    padding: calc(78px + 16px) 18px 18px;
+    border-radius: 0;
+    border:none;
+
+    background:
+      radial-gradient(900px 520px at 20% 20%, rgba(54,193,210,.20), transparent 60%),
+      radial-gradient(900px 520px at 85% 30%, rgba(31,159,176,.18), transparent 62%),
+      rgba(0,0,0,.92);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: none;
+
+    /* état fermé */
+    opacity:0;
+    pointer-events:none;
+    transform: translateY(-12px);
+    transition: .28s ease;
+  }
+
+  /* état ouvert */
+  .nav.is-open{
+    opacity:1;
+    pointer-events:auto;
+    transform: translateY(0);
+  }
+
+  /* liens plus “touch friendly” */
+  .nav-link{
+    width:100%;
+    padding:14px 14px;
+    border-radius:16px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    color: rgba(255,255,255,.92);
+    font-size:.95rem;
+  }
+  .nav-link:hover{
+    background: rgba(54,193,210,.10);
+    border-color: rgba(54,193,210,.28);
+  }
+
+  /* active plus visible */
+  .nav-link.is-active{
+    color:#fff;
+    background: rgba(54,193,210,.14);
+    border-color: rgba(54,193,210,.35);
+  }
+
+  /* socials en bas du menu */
+  .nav-socials{
+    margin-top:10px;
+    padding-top:14px;
+    border-top:1px solid rgba(255,255,255,.10);
+    justify-content:flex-start;
+    gap:14px;
+  }
+  .nav-social{
+    width:44px;
+    height:44px;
+    border-radius:16px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+  }
+  .nav-icon{width:18px;height:18px}
+
+  /* burger au-dessus */
+  .site-header{z-index:999;}
+}
+
+/* petit “lock scroll” quand menu ouvert (ajoute body.nav-open en JS si tu veux) */
+body.nav-open{overflow:hidden;}
+
+/* =========================================================
+   HERO — TITRE + GLASS NOTE + MEDIA CINÉ
+========================================================= */
+.newsHero-left h1{
+  background: linear-gradient(180deg, #ffffff 0%, #eefcff 55%, rgba(54,193,210,.85) 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 14px rgba(0,0,0,.45);
+}
+
+.newsHero-sub{
+  color: rgba(244,245,242,.78);
+  max-width: 62ch;
+}
+
+/* note plus clean */
+.newsHero-note{
+  background:
+    radial-gradient(420px 260px at 20% 20%, rgba(54,193,210,.12), transparent 60%),
+    rgba(255,255,255,.03);
+  border-color: rgba(255,255,255,.10);
+}
+
+/* media : effet ciné + vignette + cadre intérieur plus net */
+.newsHero-media{
+  transform: translateZ(0);
+}
+.newsHero-media::before{
+  opacity:1;
+  mix-blend-mode: normal;
+}
+.newsHero-media::after{
+  inset:14px;
+  opacity:1;
+}
+
+.newsHero-video,
+.newsHero-fallback{
+  filter: saturate(1.10) contrast(1.08);
+}
+
+/* vignette */
+.newsHero-media::marker{content:"";}
+.newsHero-media .vignette{display:none;}
+.newsHero-media::after{
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+/* badge : dot pulse */
+.badgeDot{
+  animation: dotPulse 1.4s ease-in-out infinite;
+}
+@keyframes dotPulse{
+  0%,100%{transform:scale(1); box-shadow:0 0 0 4px rgba(54,193,210,.18), 0 18px 45px rgba(0,0,0,.55);}
+  50%{transform:scale(1.15); box-shadow:0 0 0 6px rgba(54,193,210,.14), 0 18px 55px rgba(0,0,0,.65);}
+}
+
+/* =========================================================
+   FEATURED — plus premium (image crop + hover)
+========================================================= */
+.featuredPost{
+  background:
+    radial-gradient(700px 420px at 15% 20%, rgba(54,193,210,.14), transparent 60%),
+    rgba(255,255,255,.03);
+  border-color: rgba(54,193,210,.20);
+}
+
+.featuredMedia{
+  border:1px solid rgba(255,255,255,.10);
+}
+.featuredMedia img{
+  transform: scale(1.03);
+  transition: transform .45s ease, filter .45s ease;
+  filter: saturate(1.05) contrast(1.03);
+}
+.featuredPost:hover .featuredMedia img{
+  transform: scale(1.07);
+  filter: saturate(1.10) contrast(1.06);
+}
+
+/* =========================================================
+   CARDS/PANELS — lisibilité + hover plus clean
+========================================================= */
+.card, .panel{
+  border-color: rgba(255,255,255,.10);
+}
+
+.card::before, .panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: radial-gradient(520px 320px at 15% 10%, rgba(54,193,210,.10), transparent 60%);
+  opacity:.9;
+}
+
+.card:hover{
+  transform: translateY(-7px);
+  border-color: rgba(54,193,210,.30);
+}
+
+.panel:hover{
+  border-color: rgba(54,193,210,.28);
+  box-shadow: 0 40px 120px rgba(0,0,0,.75);
+}
+
+/* titres un poil plus punchy */
+.card h3, .panel h3{
+  letter-spacing:-.015em;
+}
+
+/* =========================================================
+   POSTS — logbook plus “pro”
+========================================================= */
+.postCard{
+  padding-left:62px;
+}
+.postCard::before{
+  left:30px;
+  opacity:1;
+}
+.postCard::after{
+  left:26px;
+}
+
+/* meta plus propre */
+.meta{
+  color: rgba(244,245,242,.66);
+}
+
+/* =========================================================
+   RESPONSIVE HERO + CTA
+========================================================= */
+@media (max-width: 980px){
+  .newsHero{
+    padding:56px 0 28px;
+  }
+  .newsHero-left h1{
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+  }
+  .newsHero-cta{
+    gap:10px;
+  }
+}
+
+/* =========================================================
+   PERF / MOTION
+========================================================= */
+@media (prefers-reduced-motion: reduce){
+  .badgeDot{animation:none;}
+  .featuredMedia img{transition:none;}
+}
+
+/* =========================================================
+   PATCH V2 — News premium (NE SUPPRIME RIEN)
+   Colle tout en bas de ton news.css
+========================================================= */
+
+/* 0) Micro-optimisations lisibilité */
+.newsHero-left,
+.section-head p,
+.card p,
+.panel p,
+.meta{
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1) HERO : + impact (sans changer tes tailles) */
+.newsHero-left h1{
+  background: linear-gradient(180deg,
+    #ffffff 0%,
+    rgba(244,245,242,.92) 45%,
+    rgba(54,193,210,.78) 125%
+  );
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:
+    0 10px 28px rgba(0,0,0,.35),
+    0 2px 10px rgba(0,0,0,.35);
+}
+
+/* 2) HERO : meilleure hiérarchie + confort */
+.newsHero-sub{
+  color: rgba(244,245,242,.74);
+}
+.newsHero-note{
+  background:
+    radial-gradient(520px 320px at 20% 25%, rgba(54,193,210,.14), transparent 60%),
+    rgba(255,255,255,.03);
+  border-color: rgba(255,255,255,.12);
+}
+
+/* 3) MEDIA : “cinematic card” + profondeur + finesse */
+.newsHero-media{
+  border-color: rgba(255,255,255,.14);
+  box-shadow:
+    0 50px 150px rgba(0,0,0,.82),
+    0 0 0 1px rgba(54,193,210,.10) inset;
+  transform: translateZ(0);
+}
+
+/* overlay ciné plus propre (sans écraser ta vidéo) */
+.newsHero-media::before{
+  opacity: .95;
+  mix-blend-mode: normal;
+  background:
+    radial-gradient(620px 520px at 30% 18%, rgba(54,193,210,.26), transparent 60%),
+    radial-gradient(520px 420px at 85% 40%, rgba(31,159,176,.16), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.62));
+}
+
+/* cadre intérieur plus “pro” */
+.newsHero-media::after{
+  inset: 14px;
+  border-color: rgba(255,255,255,.12);
+  opacity: 1;
+}
+
+/* 4) VIDEO : cover + rendu stable + fallback intelligent */
+.newsHero-video,
+.newsHero-fallback{
+  transform: scale(1.03);
+  filter: saturate(1.12) contrast(1.08);
+}
+
+/* Ton CSS met déjà fallback en opacity 0 => on améliore :
+   - on affiche l'image seulement si la vidéo ne joue pas (classe ajoutée en JS)
+*/
+.newsHero-media.is-fallback .newsHero-fallback{
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+.newsHero-media.is-fallback .newsHero-video{
+  opacity: 0;
+}
+
+/* 5) Badge : dot pulse + badge plus “glass” */
+.newsHero-badge{
+  background: rgba(0,0,0,.45);
+  border-color: rgba(255,255,255,.14);
+  box-shadow: 0 18px 55px rgba(0,0,0,.55);
+}
+.badgeDot{
+  animation: dotPulse 1.4s ease-in-out infinite;
+}
+@keyframes dotPulse{
+  0%,100%{
+    transform: scale(1);
+    box-shadow:
+      0 0 0 4px rgba(54,193,210,.18),
+      0 18px 45px rgba(0,0,0,.55);
+  }
+  50%{
+    transform: scale(1.18);
+    box-shadow:
+      0 0 0 6px rgba(54,193,210,.14),
+      0 20px 65px rgba(0,0,0,.65);
+  }
+}
+
+/* 6) FEATURED : image plus vivante au hover */
+.featuredMedia img{
+  transition: transform .55s ease, filter .55s ease;
+}
+.featuredPost:hover .featuredMedia img{
+  transform: scale(1.08);
+  filter: saturate(1.16) contrast(1.08);
+}
+
+/* 7) Cards/Panels : hover plus clean + glow maîtrisé */
+.card, .panel{
+  border-color: rgba(255,255,255,.12);
+}
+.card::before, .panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(520px 320px at 14% 18%, rgba(54,193,210,.12), transparent 60%);
+  opacity:.95;
+}
+.card:hover{
+  transform: translateY(-8px);
+  border-color: rgba(54,193,210,.34);
+  box-shadow: 0 55px 155px rgba(0,0,0,.85);
+}
+.panel:hover{
+  border-color: rgba(54,193,210,.30);
+}
+
+/* 8) CTA : boutons plus “premium” au hover */
+.btn:hover{
+  border-color: rgba(54,193,210,.42);
+}
+
+/* 9) MOBILE NAV : full-screen premium SANS casser ton .nav.is-open */
+@media (max-width: 760px){
+  .nav{
+    background:
+      radial-gradient(900px 540px at 18% 20%, rgba(54,193,210,.18), transparent 60%),
+      radial-gradient(900px 540px at 85% 30%, rgba(31,159,176,.16), transparent 62%),
+      rgba(0,0,0,.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .nav-link{
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.10);
+  }
+  .nav-link:hover{
+    background: rgba(54,193,210,.10);
+    border-color: rgba(54,193,210,.28);
+  }
+  .nav-link.is-active{
+    background: rgba(54,193,210,.14);
+    border-color: rgba(54,193,210,.35);
+    color:#fff;
+  }
+
+  .nav-social{
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+    display:grid;
+    place-items:center;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.10);
+  }
+  .nav-social:hover{
+    background: rgba(54,193,210,.10);
+    border-color: rgba(54,193,210,.28);
+  }
+}
+
+/* 10) Responsive hero : meilleur équilibre */
+@media (max-width: 980px){
+  .newsHero-grid{ align-items: stretch; }
+  .newsHero-media{ box-shadow: 0 45px 130px rgba(0,0,0,.78); }
+}
+
+/* 11) Reduced motion (propre) */
+@media (prefers-reduced-motion: reduce){
+  .badgeDot{ animation:none; }
+  .featuredMedia img{ transition:none; }
+}
+
+/* =========================================================
+   NEWS PAGE INTRO ANIMATION
+========================================================= */
+
+.news-page .newsHero{
+  isolation:isolate;
+}
+
+.news-enter,
+.news-enter-left,
+.news-enter-right{
+  opacity:0;
+  will-change:transform, opacity, filter;
+}
+
+.news-page.is-loaded .news-enter{
+  animation: newsFadeUp .9s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.news-page.is-loaded .news-enter-left{
+  animation: newsLeftIn 1s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.news-page.is-loaded .news-enter-right{
+  animation: newsRightIn 1s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.news-page.is-loaded .news-enter-1{ animation-delay:.10s; }
+.news-page.is-loaded .news-enter-2{ animation-delay:.22s; }
+.news-page.is-loaded .news-enter-3{ animation-delay:.36s; }
+.news-page.is-loaded .news-enter-4{ animation-delay:.50s; }
+.news-page.is-loaded .news-enter-5{ animation-delay:.64s; }
+
+.news-page.is-loaded .newsHero-bg{
+  animation: newsHeroGlow 1.8s ease-out both;
+}
+
+.news-page.is-loaded .newsHero-photoCard{
+  animation:
+    newsFadeUp 1s cubic-bezier(.2,.8,.2,1) forwards,
+    newsFloat 5.5s ease-in-out 1.2s infinite alternate;
+}
+
+@keyframes newsFadeUp{
+  0%{
+    opacity:0;
+    transform:translateY(26px) scale(.985);
+    filter:blur(8px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+}
+
+@keyframes newsLeftIn{
+  0%{
+    opacity:0;
+    transform:translateX(-28px);
+    filter:blur(10px);
+  }
+  100%{
+    opacity:1;
+    transform:translateX(0);
+    filter:blur(0);
+  }
+}
+
+@keyframes newsRightIn{
+  0%{
+    opacity:0;
+    transform:translateX(32px);
+    filter:blur(10px);
+  }
+  100%{
+    opacity:1;
+    transform:translateX(0);
+    filter:blur(0);
+  }
+}
+
+@keyframes newsHeroGlow{
+  0%{
+    opacity:.2;
+    transform:scale(1.04);
+    filter:blur(12px);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+}
+
+@keyframes newsFloat{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .news-enter,
+  .news-enter-left,
+  .news-enter-right,
+  .news-page.is-loaded .newsHero-bg,
+  .news-page.is-loaded .newsHero-photoCard{
+    animation:none !important;
+    opacity:1 !important;
+    transform:none !important;
+    filter:none !important;
+  }
+}
+
+/* =========================================================
+  FIN NEWS PAGE INTRO ANIMATION
+========================================================= */
+
+
+
+/* =========================================================
+  PHOTO JIMMY
+========================================================= */
+.featuredMedia{
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0b1620;
+}
+
+.featuredMedia img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
