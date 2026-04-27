@@ -905,6 +905,7 @@ img{max-width:100%; display:block}
     padding-bottom:8px;
     scroll-snap-type:x mandatory;
   }
+  
 
   .pressRow-item{
     min-width:78%;
@@ -1160,21 +1161,28 @@ html, body{
   }
 }
 
-/* Press row */
+/* Press row responsive propre */
 @media (max-width:640px){
   .pressRow{
-    display:flex !important;
-    gap:16px;
-    overflow-x:auto;
-    padding-bottom:12px;
-    scroll-snap-type:x mandatory;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+    overflow:visible !important;
+    padding-bottom:0 !important;
   }
 
   .pressRow-item{
-    min-width:82%;
-    min-height:300px;
-    flex:0 0 auto;
-    scroll-snap-align:start;
+    width:100% !important;
+    min-width:0 !important;
+    min-height:auto !important;
+    height:auto !important;
+  }
+
+  .pressRow-item img{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    object-position:center top !important;
   }
 }
 
@@ -1190,3 +1198,42 @@ html, body{
   }
 }
 
+
+
+
+/* ================= RESPONSIVE ARTICLES PRESSE BIO ================= */
+
+@media (max-width: 1100px){
+  .pressRow{
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap:18px;
+  }
+
+  .pressRow-item{
+    min-height:360px;
+  }
+}
+
+@media (max-width: 640px){
+  .pressRow{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+    overflow:visible !important;
+  }
+
+  .pressRow-item{
+    width:100% !important;
+    min-width:0 !important;
+    min-height:auto !important;
+    height:auto !important;
+  }
+
+  .pressRow-item img{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center top !important;
+  }
+}
