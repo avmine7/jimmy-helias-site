@@ -1819,11 +1819,15 @@ html, body{
 /* ================= BAISSER LES BOUTONS BIO ET SAISON ACCEUIL ================= */
 
 @media (max-width: 600px) {
-  .heroCTA {
-    margin-top: 70px;
+  .hero-content--buttons-only {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 40px;
   }
 
-  .heroContent { 
-    padding-bottom: 40px;
+  .hero-actions-only {
+    margin-top: 0;
   }
 }
