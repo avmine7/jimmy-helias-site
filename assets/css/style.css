@@ -1818,8 +1818,12 @@ html, body{
 
 /* ================= BAISSER LES BOUTONS BIO ET SAISON ACCEUIL ================= */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .heroCTA {
-    margin-top: 60px; /* ajuste entre 50 et 80 si besoin */
+    margin-top: 70px;
+  }
+
+  .heroContent { 
+    padding-bottom: 40px;
   }
 }
