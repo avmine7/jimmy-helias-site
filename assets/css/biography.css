@@ -999,9 +999,27 @@ html, body{
     letter-spacing:.06em;
   }
 
-  .nav{
-    background:rgba(255,255,255,.96) !important;
+    @media (max-width:760px){
+      .nav{
+        background:rgba(0,0,0,.94) !important;
+        border:1px solid rgba(54,193,210,.65) !important;
+        box-shadow:0 22px 70px rgba(0,0,0,.55) !important;
+      }
+
+  .nav-link{
+    color:rgba(255,255,255,.78) !important;
   }
+
+  .nav-link:hover,
+  .nav-link.is-active{
+    color:#36c1d2 !important;
+    background:rgba(54,193,210,.10) !important;
+  }
+
+  .nav-icon{
+    color:rgba(255,255,255,.75) !important;
+  }
+}
 
   .nav-link{
     color:#1f9fb0 !important;
@@ -1171,3 +1189,4 @@ html, body{
     flex-wrap:wrap;
   }
 }
+
