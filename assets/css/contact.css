@@ -767,3 +767,41 @@ img{max-width:100%; display:block}
   .contactForm .btn-primary{ animation:none !important; }
   .contactForm .btn-primary::before{ animation:none !important; }
 }
+
+
+
+/* =====================================================
+   ajout du responsive 
+   ===================================================== */
+
+@media (max-width: 520px){
+  .contactTitle{
+    font-size: clamp(2.3rem, 14vw, 3.2rem);
+    letter-spacing: -0.04em;
+  }
+
+  .qValue{
+    font-size: .86rem;
+    word-break: break-word;
+  }
+
+  .panel{
+    padding: 22px 16px;
+  }
+
+  .actions .btn{
+    width: 100%;
+  }
+
+  .contactNote{
+    flex-direction: column;
+  }
+
+  .miniStats{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   Fin d'ajout du responsive 
+   ===================================================== */
