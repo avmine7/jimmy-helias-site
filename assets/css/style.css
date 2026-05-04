@@ -157,8 +157,8 @@ img{max-width:100%; display:block}
   inset:0;
   z-index:2;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.46) 38%, rgba(0,0,0,.18) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.22) 0%, rgba(0,0,0,.08) 40%, rgba(0,0,0,.58) 100%);
+    linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.22) 38%, rgba(0,0,0,.08) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.04) 40%, rgba(0,0,0,.28) 100%);
 }
 
 /* position des boutons */
@@ -2063,3 +2063,20 @@ html, body{
   display: flex;
   gap: 25px;
 }
+
+
+
+
+
+
+
+
+/* ================= ajustement photo jimmy ================= */
+
+.hero-bg-image {
+  object-position: center 30%;
+}
+
+
+
+/* ================= fin ajustement de jimmy ================= */
