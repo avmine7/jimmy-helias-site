@@ -1,0 +1,127 @@
+:root{
+  --bg:#06131a;
+  --bg2:#082632;
+  --text:#f4f7f8;
+  --muted:rgba(244,247,248,.72);
+  --blue:#36c1d2;
+  --blue2:#78ffff;
+  --border:rgba(120,255,255,.25);
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(54,193,210,.18), transparent 35%),
+    linear-gradient(180deg, #041017 0%, var(--bg) 100%);
+  color:var(--text);
+}
+
+.legal-page{
+  min-height:100vh;
+  padding:140px 8% 80px;
+}
+
+.legal-container{
+  max-width:1100px;
+  margin:0 auto;
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:55px;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+  backdrop-filter:blur(12px);
+}
+
+.legal-kicker{
+  color:var(--blue2);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:.8rem;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.legal-title{
+  font-size:clamp(2.2rem, 5vw, 4.5rem);
+  line-height:.95;
+  margin:0 0 20px;
+  text-transform:uppercase;
+  font-weight:950;
+}
+
+.legal-intro{
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:780px;
+  line-height:1.8;
+  margin-bottom:45px;
+}
+
+.legal-section{
+  padding:28px 0;
+  border-top:1px solid rgba(255,255,255,.09);
+}
+
+.legal-section h2{
+  margin:0 0 14px;
+  font-size:1.35rem;
+  color:#fff;
+}
+
+.legal-section p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:1rem;
+}
+
+.legal-section a{
+  color:var(--blue2);
+  text-decoration:none;
+}
+
+.legal-section a:hover{
+  text-decoration:underline;
+}
+
+.legal-back{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:35px;
+  padding:14px 22px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  transition:.25s ease;
+}
+
+.legal-back:hover{
+  transform:translateY(-2px);
+  border-color:var(--blue2);
+  box-shadow:0 0 25px rgba(120,255,255,.22);
+}
+
+@media(max-width:768px){
+  .legal-page{
+    padding:110px 18px 55px;
+  }
+
+  .legal-container{
+    padding:32px 22px;
+    border-radius:22px;
+  }
+
+  .legal-title{
+    font-size:2.4rem;
+  }
+
+  .legal-section{
+    padding:24px 0;
+  }
+}
