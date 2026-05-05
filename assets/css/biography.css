@@ -1472,3 +1472,189 @@ body::before{
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(102,245,255,.38);
 }
+
+
+
+/* ================= KARTING CINEMATIC VIDEOS ================= */
+
+/* ================= KARTING ERA PREMIUM ================= */
+
+/* ================= KARTING LEGACY — PREMIUM ================= */
+
+/* ================= KARTING LEGACY — HARMONISÉ ================= */
+
+.kartLegacySection{
+  position:relative;
+  overflow:hidden;
+}
+
+.kartLegacyHead{
+  max-width:920px;
+  margin-bottom:36px;
+}
+
+.kartLegacyEyebrow,
+.kartLegacyOverlay span{
+  display:inline-flex;
+  padding:8px 13px;
+  border-radius:999px;
+  border:1px solid rgba(120,255,255,.38);
+  background:rgba(120,255,255,.12);
+  color:#78ffff;
+  font-size:.7rem;
+  font-weight:950;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.kartLegacyHead h2{
+  margin:16px 0 12px;
+  font-size:clamp(2.6rem, 5.5vw, 5rem);
+  line-height:.9;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+}
+
+.kartLegacyHead p{
+  margin:0;
+  max-width:76ch;
+  color:rgba(244,245,242,.78);
+  font-size:1.08rem;
+  line-height:1.85;
+}
+
+/* 2 vidéos équilibrées */
+.kartLegacyGrid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:24px;
+  align-items:stretch;
+}
+
+.kartLegacyVideo,
+.kartLegacyVideo.main,
+.kartLegacyVideo.small{
+  position:relative;
+  height:520px;
+  overflow:hidden;
+  border-radius:32px;
+  border:1px solid rgba(120,255,255,.30);
+  background:#000;
+  box-shadow:
+    0 32px 95px rgba(0,0,0,.40),
+    0 0 45px rgba(120,255,255,.09);
+  isolation:isolate;
+}
+
+.kartLegacyVideo video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(.9) contrast(1.08) saturate(1.08);
+}
+
+.kartLegacyVideo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.16) 42%, rgba(0,0,0,.76)),
+    linear-gradient(90deg, rgba(0,0,0,.26), transparent 58%);
+  pointer-events:none;
+}
+
+.kartLegacyVideo::before{
+  content:"";
+  position:absolute;
+  inset:-45%;
+  z-index:2;
+  background:linear-gradient(115deg, transparent 38%, rgba(120,255,255,.28), transparent 62%);
+  transform:translateX(-115%) skewX(-12deg);
+  transition:transform .75s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none;
+}
+
+.kartLegacyVideo:hover::before{
+  transform:translateX(115%) skewX(-12deg);
+}
+
+.kartLegacyVideo:hover{
+  border-color:rgba(120,255,255,.50);
+  box-shadow:
+    0 38px 110px rgba(0,0,0,.46),
+    0 0 55px rgba(120,255,255,.14);
+}
+
+.kartLegacyOverlay{
+  position:absolute;
+  left:26px;
+  right:26px;
+  bottom:24px;
+  z-index:3;
+}
+
+.kartLegacyOverlay h3,
+.kartLegacyOverlay.compact h3{
+  margin:14px 0 0;
+  font-size:clamp(1.8rem, 3.4vw, 3.4rem);
+  line-height:.92;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+}
+
+/* on neutralise l'ancien bloc texte si encore présent */
+.kartLegacySide{
+  display:contents;
+}
+
+.kartLegacyText{
+  display:none;
+}
+
+/* mobile : swipe */
+@media (max-width:900px){
+  .kartLegacyGrid{
+    display:flex;
+    overflow-x:auto;
+    gap:16px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:14px;
+  }
+
+  .kartLegacyVideo,
+  .kartLegacyVideo.main,
+  .kartLegacyVideo.small{
+    flex:0 0 86vw;
+    height:440px;
+    scroll-snap-align:start;
+  }
+
+  .kartLegacyGrid::-webkit-scrollbar{
+    height:6px;
+  }
+
+  .kartLegacyGrid::-webkit-scrollbar-thumb{
+    background:rgba(120,255,255,.35);
+    border-radius:999px;
+  }
+}
+
+@media (max-width:520px){
+  .kartLegacyVideo,
+  .kartLegacyVideo.main,
+  .kartLegacyVideo.small{
+    flex-basis:88vw;
+    height:410px;
+  }
+
+  .kartLegacyOverlay{
+    left:18px;
+    right:18px;
+    bottom:18px;
+  }
+}
+
+/* =================FIN  KARTING CINEMATIC VIDEOS ================= */
