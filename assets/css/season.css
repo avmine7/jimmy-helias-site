@@ -980,3 +980,49 @@ body::before{
     0 0 25px rgba(120,255,255,.15),
     0 0 60px rgba(120,255,255,.08);
 }
+
+
+
+/* ================= NOGARO SWIPE MOBILE ================= */
+
+@media (max-width: 768px){
+
+  .nogaroWrapper{
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:14px;
+  }
+
+  .nogaroWrapper .galleryGrid{
+    display:flex !important;
+    gap:16px;
+    width:max-content;
+  }
+
+  .nogaroWrapper .galleryItem{
+    flex:0 0 85vw; /* taille carte */
+    height:320px;
+    scroll-snap-align:start;
+    border-radius:20px;
+  }
+
+  .nogaroWrapper .galleryItem img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  /* scrollbar clean */
+  .nogaroWrapper::-webkit-scrollbar{
+    height:6px;
+  }
+
+  .nogaroWrapper::-webkit-scrollbar-thumb{
+    background:rgba(120,255,255,.35);
+    border-radius:999px;
+  }
+}
+
+/* =================FIN NOGARO SWIPE MOBILE ================= */
