@@ -2159,3 +2159,50 @@ body{
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(102,245,255,.38);
 }
+
+
+
+
+
+
+/* ================= GALLERY SWIPE MOBILE ================= */
+
+@media (max-width: 768px){
+
+  .galleryRight{
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    padding-bottom:14px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .galleryGrid.galleryGrid--mag{
+    display:flex !important;
+    gap:16px;
+    width:max-content;
+  }
+
+  .galleryGrid--mag .galleryCard{
+    flex:0 0 78vw;
+    height:420px !important;
+    scroll-snap-align:start;
+  }
+
+  .galleryGrid--mag .galleryCard img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .galleryRight::-webkit-scrollbar{
+    height:6px;
+  }
+
+  .galleryRight::-webkit-scrollbar-thumb{
+    background:rgba(120,255,255,.35);
+    border-radius:999px;
+  }
+}
+
+/* ================= FIN GALLERY SWIPE MOBILE ================= */
