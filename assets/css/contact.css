@@ -805,3 +805,111 @@ img{max-width:100%; display:block}
 /* =====================================================
    Fin d'ajout du responsive 
    ===================================================== */
+
+
+
+/* ================= FIX GLOBAL CONTACT — PLUS CLAIR + NAV FONCÉE ================= */
+
+:root{
+  --bg:#0b2f3a;
+  --bg2:#0e4350;
+  --bg3:#08242d;
+  --line:rgba(120,255,255,.55);
+}
+
+/* fond global bleu lumineux */
+body{
+  background:
+    radial-gradient(1200px 760px at 18% 18%, rgba(120,255,255,.42), transparent 60%),
+    radial-gradient(1050px 650px at 82% 28%, rgba(61,245,255,.34), transparent 60%),
+    linear-gradient(180deg, #0e4350 0%, #0b2f3a 55%, #08242d 100%) !important;
+}
+
+/* réduit le voile lumineux/sombre animé */
+body::before{
+  opacity:.35 !important;
+  filter: blur(8px) !important;
+}
+
+/* navbar plus foncée */
+.site-header{
+  background: rgba(0, 12, 18, .90) !important;
+  backdrop-filter: blur(14px);
+  border-bottom:1px solid rgba(120,255,255,.38) !important;
+}
+
+/* enlève le gros overlay noir du hero */
+.contactHero-bg{
+  background:
+    radial-gradient(1200px 700px at 16% 24%, rgba(120,255,255,.24), transparent 60%),
+    radial-gradient(900px 520px at 86% 28%, rgba(61,245,255,.18), transparent 62%),
+    rgba(8,36,45,.35) !important;
+}
+
+.contactHero::after{
+  opacity:.35 !important;
+}
+
+/* sections moins sombres */
+.section.alt{
+  background:
+    radial-gradient(900px 520px at 20% 20%, rgba(120,255,255,.14), transparent 60%),
+    rgba(8,36,45,.35) !important;
+}
+
+/* cartes/panneaux moins noirs */
+.panel,
+.quickCard,
+.reason,
+.contactCard,
+.contactNote,
+.stat{
+  background:
+    radial-gradient(520px 320px at 20% 18%, rgba(120,255,255,.16), transparent 62%),
+    rgba(10,55,68,.58) !important;
+
+  box-shadow:0 22px 55px rgba(0,0,0,.28) !important;
+}
+
+/* petits blocs internes moins noirs */
+.qIcon,
+.rIcon,
+.contactForm input,
+.contactForm select,
+.contactForm textarea,
+.chip{
+  background: rgba(4,28,36,.45) !important;
+}
+
+/* focus des champs plus lumineux */
+.contactForm input:focus,
+.contactForm select:focus,
+.contactForm textarea:focus{
+  background: rgba(5,40,52,.62) !important;
+}
+
+/* boutons plus cohérents */
+.btn-primary,
+.contactForm .btn-primary{
+  background:
+    radial-gradient(600px 220px at 20% 20%, rgba(120,255,255,.22), transparent 60%),
+    linear-gradient(180deg, rgba(120,255,255,.32), rgba(61,245,255,.14)) !important;
+
+  box-shadow:0 24px 70px rgba(0,0,0,.30) !important;
+}
+
+/* hover moins lourd */
+.panel:hover,
+.quickCard:hover,
+.reason:hover,
+.contactCard:hover{
+  box-shadow:0 32px 80px rgba(0,0,0,.38) !important;
+}
+
+/* menu mobile */
+@media (max-width:760px){
+  .nav{
+    background:rgba(0,12,18,.94) !important;
+  }
+}
+/* =================FIIN  FIX GLOBAL CONTACT — PLUS CLAIR + NAV FONCÉE ================= */

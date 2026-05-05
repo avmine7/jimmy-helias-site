@@ -806,3 +806,171 @@ img{max-width:100%; display:block}
     font-size: 0.68rem;
   }
 }
+
+
+/* ================= FIX GLOBAL SAISON — PLUS CLAIR + NAV FONCÉE ================= */
+
+:root{
+  --bg:#0b2f3a;
+  --bg2:#0e4350;
+  --bg3:#08242d;
+  --line:rgba(120,255,255,.55);
+}
+
+/* fond global bleu lumineux */
+body{
+  background:
+    radial-gradient(1200px 760px at 18% 18%, rgba(120,255,255,.42), transparent 60%),
+    radial-gradient(1050px 650px at 82% 28%, rgba(61,245,255,.34), transparent 60%),
+    linear-gradient(180deg, #0e4350 0%, #0b2f3a 55%, #08242d 100%) !important;
+}
+
+/* baisse l'effet brouillard sombre */
+body::before{
+  opacity:.35 !important;
+  filter: blur(8px) !important;
+}
+
+/* navbar plus foncée */
+.site-header{
+  background: rgba(0, 12, 18, .90) !important;
+  backdrop-filter: blur(14px);
+  border-bottom:1px solid rgba(120,255,255,.38) !important;
+}
+
+/* enlève les gros overlays noirs des sections */
+.section.alt,
+.seasonHero-bg{
+  background:
+    radial-gradient(1100px 650px at 20% 20%, rgba(120,255,255,.24), transparent 60%),
+    radial-gradient(900px 520px at 85% 25%, rgba(61,245,255,.18), transparent 62%),
+    rgba(8,36,45,.35) !important;
+}
+
+/* cartes/panneaux moins noirs */
+.panel,
+.trackCard,
+.statCard,
+.roundCard,
+.step,
+.board,
+.ctaBox,
+.faq,
+.galleryItem{
+  background:
+    radial-gradient(520px 320px at 20% 18%, rgba(120,255,255,.16), transparent 62%),
+    rgba(10,55,68,.58) !important;
+
+  box-shadow:0 22px 55px rgba(0,0,0,.28) !important;
+}
+
+/* éléments internes qui rajoutaient du noir */
+.heroTicker,
+.chip,
+.status,
+.trackMap,
+.progressBar,
+.miniBar,
+.boardRow.head{
+  background:rgba(4,28,36,.45) !important;
+}
+
+/* hover plus léger */
+.roundCard:hover,
+.trackCard:hover,
+.panel:hover,
+.galleryItem:hover{
+  box-shadow:0 32px 80px rgba(0,0,0,.38) !important;
+}
+
+/* images galerie moins assombries */
+.galleryItem::before{
+  background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.16)) !important;
+}
+
+/* menu mobile reste lisible */
+@media (max-width:760px){
+  .nav{
+    background:rgba(0,12,18,.94) !important;
+  }
+}
+
+/* ================= FIX GLOBAL SAISON — PLUS CLAIR + NAV FONCÉE ================= */
+
+
+
+/* ================= AFFICHE DIJON DANS CARD ================= */
+
+.roundPoster{
+  margin:14px 0 16px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(120,255,255,.28);
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
+  background:rgba(0,0,0,.25);
+}
+
+.roundPoster img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  object-position:center 25%; /* 👈 parfait pour ton affiche */
+}
+
+
+@media (max-width: 768px){
+  .roundPoster img{
+    height:auto; /* 👈 s’adapte naturellement */
+    max-height:260px;
+    object-fit:contain; /* 👈 on voit toute l'affiche */
+    background:#061118; /* propre visuellement */
+    padding:6px;
+  }
+}
+
+/* ================= F1 SPEED EFFECT ================= */
+
+.roundPoster{
+  position:relative;
+  overflow:hidden;
+}
+
+/* lumière qui traverse */
+.roundPoster::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(120,255,255,.25),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none;
+}
+
+/* glow autour */
+.roundPoster::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  border:1px solid rgba(120,255,255,.0);
+  box-shadow:0 0 0 0 rgba(120,255,255,0);
+  transition:.35s ease;
+  pointer-events:none;
+}
+
+/* hover */
+.roundCard:hover .roundPoster::before{
+  transform: translateX(120%);
+}
+
+.roundCard:hover .roundPoster::after{
+  border-color: rgba(120,255,255,.35);
+  box-shadow:
+    0 0 25px rgba(120,255,255,.15),
+    0 0 60px rgba(120,255,255,.08);
+}

@@ -863,8 +863,9 @@ img{max-width:100%; display:block}
 .gallerySection{
   padding:90px 0;
   background:
-    radial-gradient(1200px 800px at 70% 30%, rgba(54,193,210,.12), transparent 62%),
-    linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.80));
+    radial-gradient(1200px 700px at 16% 24%, rgba(54,193,210,.30), transparent 60%),
+    radial-gradient(900px 520px at 86% 28%, rgba(31,159,176,.18), transparent 62%),
+    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.08), rgba(0,0,0,.32));
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
@@ -2081,3 +2082,80 @@ html, body{
 
 
 /* ================= fin ajustement de jimmy ================= */
+
+
+
+
+
+
+
+/* ================= FIX GLOBAL HOME PLUS CLAIR ================= */
+
+:root{
+  --bg:#0b2f3a;
+  --bg2:#0e4350;
+  --line:rgba(102,245,255,.55);
+}
+
+body{
+  background:
+    radial-gradient(1200px 760px at 18% 18%, rgba(102,245,255,.42), transparent 60%),
+    radial-gradient(1050px 650px at 82% 28%, rgba(51,234,255,.34), transparent 60%),
+    linear-gradient(180deg, #0e4350 0%, #0b2f3a 55%, #08242d 100%) !important;
+}
+
+/* enlève le gros filtre noir des sections */
+.section.alt,
+.gallerySection,
+.partnersSection,
+.focusSection{
+  background:
+    radial-gradient(1200px 700px at 16% 24%, rgba(54,193,210,.22), transparent 60%),
+    radial-gradient(900px 520px at 86% 28%, rgba(31,159,176,.16), transparent 62%),
+    rgba(8,36,45,.35) !important;
+}
+
+/* hero moins noir */
+.hero.hero-cinematic{
+  background:#0b2f3a !important;
+}
+
+.hero-overlay{
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.08) 45%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(0,0,0,.04) 45%, rgba(0,0,0,.12) 100%) !important;
+}
+
+/* cartes moins noires */
+.season-review,
+.focusCard,
+.about-card,
+.stat,
+.video-card,
+.galleryCard,
+.about-cta.ultra{
+  background:
+    radial-gradient(500px 320px at 20% 15%, rgba(102,245,255,.16), transparent 60%),
+    rgba(10,55,68,.58) !important;
+
+  box-shadow: 0 22px 55px rgba(0,0,0,.28) !important;
+}
+
+/* filtre noir sur les images de galerie réduit */
+.galleryCard::after{
+  background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.18)) !important;
+}
+
+/* header moins noir */
+.site-header{
+  background: rgba(5,35,45,.72) !important;
+}
+
+/* =================FIN FIX HOME PLUS CLAIR ================= */
+
+/* Navbar un peu plus foncée */
+.site-header{
+  background: rgba(0, 8, 12, .94) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(102,245,255,.38);
+}

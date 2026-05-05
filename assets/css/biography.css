@@ -1401,3 +1401,74 @@ html, body{
 }
 
 /* ================= fin photos karting  ================= */
+
+
+
+
+
+/* ================= FIX BIOGRAPHIE PLUS CLAIR ================= */
+
+:root{
+  --bg:#0b2f3a;
+  --bg2:#0e4350;
+  --bg3:#08242d;
+}
+
+body{
+  background:
+    radial-gradient(1200px 760px at 18% 18%, rgba(102,245,255,.42), transparent 60%),
+    radial-gradient(1050px 650px at 82% 28%, rgba(51,234,255,.34), transparent 60%),
+    linear-gradient(180deg, #0e4350 0%, #0b2f3a 55%, #08242d 100%) !important;
+}
+
+body::before{
+  opacity:.35 !important;
+}
+
+.bioHero-bg{
+  background:
+    radial-gradient(1100px 650px at 20% 25%, rgba(54,193,210,.26), transparent 60%),
+    radial-gradient(900px 520px at 85% 30%, rgba(31,159,176,.20), transparent 62%),
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.03), rgba(0,0,0,.18)) !important;
+}
+
+.site-header{
+  background: rgba(5,35,45,.72) !important;
+}
+
+.panel,
+.card,
+.badgeCard,
+.bioQuote,
+.miniCard,
+.parcoursCard,
+.hCard,
+.pressCard{
+  background:
+    radial-gradient(500px 320px at 20% 15%, rgba(102,245,255,.16), transparent 60%),
+    rgba(10,55,68,.58) !important;
+
+  box-shadow: 0 22px 55px rgba(0,0,0,.28) !important;
+}
+
+.bioPhoto,
+.photoWrap,
+.mediaWall--press .media,
+.pressRow-item{
+  box-shadow: 0 25px 70px rgba(0,0,0,.35) !important;
+}
+
+.bioPhoto-glow{
+  background:
+    radial-gradient(520px 520px at 30% 18%, rgba(54,193,210,.20), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.22)) !important;
+}
+
+/* =================FIN  FIX BIOGRAPHIE PLUS CLAIR ================= */
+
+/* Navbar un peu plus foncée */
+.site-header{
+  background: rgba(0, 8, 12, .94) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(102,245,255,.38);
+}
