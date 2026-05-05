@@ -918,13 +918,19 @@ body::before{
 }
 
 
+/* Mobile : affiche comme sur PC */
 @media (max-width: 768px){
+  .roundPoster{
+    height:300px;
+  }
+
   .roundPoster img{
-    height:auto; /* 👈 s’adapte naturellement */
-    max-height:260px;
-    object-fit:contain; /* 👈 on voit toute l'affiche */
-    background:#061118; /* propre visuellement */
-    padding:6px;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 25%;
+    padding:0;
+    background:none;
   }
 }
 
