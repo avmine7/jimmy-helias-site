@@ -291,6 +291,28 @@ img{max-width:100%; display:block}
 
 }
 
+
+.hero-actions-only{
+  margin-left:20px; /* ajuste : 10px / 30px selon ton goût */
+}
+
+.hero-copy--buttons-only{
+  margin-left:40px; /* décalage global */
+}
+
+@media (max-width: 768px){
+
+  .hero-actions-only{
+    margin-top:40px; /* descend le bouton */
+  }
+
+}
+
+
+
+
+
+
 /* =================FIN  BOUTON VOIR LA SAISON — SPEED CTA ================= */
 
 
