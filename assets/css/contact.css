@@ -149,20 +149,32 @@ img{max-width:100%; display:block}
 
 .burger{
   display:none;
-  width:44px;
-  height:44px;
-  border-radius:14px;
+  width:54px;
+  height:54px;
+  border-radius:16px;
   border:1px solid var(--line);
-  background: rgba(255,255,255,.04);
+  background:rgba(255,255,255,.04);
   cursor:pointer;
+
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+
+  padding:0;
 }
+
 .burger span{
+  all:unset;
+
   display:block;
-  width:20px;
+  width:24px;
   height:2px;
-  background: var(--text);
-  margin:4px auto;
+
+  background:#fff;
   border-radius:999px;
+
+  flex-shrink:0;
 }
 
 /* Social */
@@ -196,24 +208,7 @@ img{max-width:100%; display:block}
 }
 
 /* Responsive nav */
-@media (max-width: 760px){
-  .burger{display:block}
-  .nav{
-    position:fixed;
-    inset:78px 16px auto 16px;
-    display:none;
-    flex-direction:column;
-    gap:10px;
-    padding:14px;
-    border-radius:18px;
-    background: rgba(0,0,0,.92);
-    border:1px solid var(--line);
-    box-shadow: var(--shadow);
-  }
-  .nav.is-open{display:flex}
-  .nav-link{width:100%; text-align:left}
-  .nav-socials{border-left:0; padding-left:0; margin-left:0;}
-}
+
 
 /* ================= BUTTONS ================= */
 .btn{
@@ -913,3 +908,52 @@ body::before{
   }
 }
 /* =================FIIN  FIX GLOBAL CONTACT — PLUS CLAIR + NAV FONCÉE ================= */
+
+
+/* Responsive nav */
+/* ===== NAVBAR FORCE BURGER ===== */
+@media (max-width:1900px){
+
+  .burger{
+    display:flex !important;
+  }
+
+  .nav{
+    position:fixed !important;
+    top:0 !important;
+    right:-100% !important;
+    width:82% !important;
+    max-width:360px !important;
+    height:100vh !important;
+    padding:110px 30px 30px !important;
+
+    background:rgba(2,16,24,.98) !important;
+    backdrop-filter:blur(18px);
+    border-left:1px solid rgba(120,255,255,.25);
+    box-shadow:-20px 0 60px rgba(0,0,0,.45);
+
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    gap:22px !important;
+
+    transition:right .35s ease !important;
+    z-index:1000 !important;
+  }
+
+  .nav.is-open{
+    right:0 !important;
+  }
+
+  .nav a{
+    width:100% !important;
+    font-size:17px !important;
+    padding:12px 0 !important;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+}
+/* FIN Responsive nav */
+
+
+/* ===== NAVBAR FORCE BURGER ===== */
