@@ -304,10 +304,18 @@ img{max-width:100%; display:block}
 
   .hero-actions-only{
     margin-top:40px; /* descend le bouton */
+    margin-left:0 !important;
+
+    display:flex;
+    justify-content:center;
+  }
+
+  .hero .btn-primary{
+    width:92%;
+    max-width:340px;
   }
 
 }
-
 
 
 
