@@ -275,6 +275,23 @@ img{max-width:100%; display:block}
   opacity:1;
 }
 
+@media (max-width: 768px){
+
+  .hero .btn-primary{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px; /* espace texte + logo propre */
+  }
+
+  .hero .btn-primary::after{
+    margin-left:0; /* ❌ enlève le décalage */
+    transform:none;
+  }
+
+}
+
+/* =================FIN  BOUTON VOIR LA SAISON — SPEED CTA ================= */
 
 
 .hero .btn-primary:hover{
