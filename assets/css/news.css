@@ -1302,3 +1302,126 @@ HERO SIGNATURE EN ROUTE VERS LA F1
     width: 20px;
   }
 }
+
+
+
+
+/* ================= NEWS HERO CTA ================= */
+
+.newsSeasonBtn{
+  position:relative;
+  overflow:hidden;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+
+  padding:16px 28px;
+  border-radius:18px;
+
+  font-size:.95rem;
+  font-weight:950;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+
+  color:#fff;
+
+  background:
+    linear-gradient(135deg,
+      rgba(120,255,255,.95) 0%,
+      rgba(35,190,210,.92) 42%,
+      rgba(5,45,60,.95) 100%
+    );
+
+  border:1px solid rgba(120,255,255,.65);
+
+  box-shadow:
+    0 0 24px rgba(120,255,255,.30),
+    0 22px 60px rgba(0,0,0,.35);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
+}
+
+/* glow */
+.newsSeasonBtn::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 35%,
+      rgba(255,255,255,.55) 48%,
+      rgba(120,255,255,.35) 52%,
+      transparent 68%
+    );
+
+  transform:translateX(-120%) skewX(-18deg);
+
+  animation: newsBtnSweep 3s ease-in-out infinite;
+}
+
+/* logo */
+.newsSeasonBtn::after{
+  content:"";
+
+  width:24px;
+  height:24px;
+
+  background:url("../img/JH_NEON.png") no-repeat center;
+  background-size:contain;
+
+  filter:
+    drop-shadow(0 0 8px rgba(120,255,255,.8));
+
+  animation: newsLogoMove .9s ease-in-out infinite;
+}
+
+.newsSeasonBtn:hover{
+  transform:translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 0 42px rgba(120,255,255,.55),
+    0 30px 80px rgba(0,0,0,.45);
+
+  filter:brightness(1.06);
+}
+
+/* animations */
+@keyframes newsBtnSweep{
+  0%{
+    transform:translateX(-120%) skewX(-18deg);
+    opacity:0;
+  }
+
+  30%{
+    opacity:1;
+  }
+
+  60%{
+    transform:translateX(120%) skewX(-18deg);
+    opacity:1;
+  }
+
+  100%{
+    transform:translateX(120%) skewX(-18deg);
+    opacity:0;
+  }
+}
+
+@keyframes newsLogoMove{
+  0%,100%{
+    transform:translateX(0);
+  }
+
+  50%{
+    transform:translateX(5px);
+  }
+}
+
+/* ================= FIN NEWS HERO CTA ================= */
