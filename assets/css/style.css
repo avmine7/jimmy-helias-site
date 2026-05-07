@@ -203,6 +203,108 @@ img{max-width:100%; display:block}
   box-shadow:0 12px 35px rgba(54,193,210,.18);
 }
 
+/* ================= BOUTON VOIR LA SAISON — EFFET CAMÉRA F1 ================= */
+
+.hero .btn-primary{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    linear-gradient(135deg, #66f5ff 0%, #1f9fb0 45%, #063040 100%);
+  border:1px solid rgba(102,245,255,.75);
+  box-shadow:
+    0 0 22px rgba(102,245,255,.35),
+    0 18px 45px rgba(0,0,0,.35);
+  animation: cameraFocus 3.2s ease-in-out infinite;
+}
+
+/* balayage façon caméra / lumière de paddock */
+.hero .btn-primary::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  z-index:-1;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 35%,
+      rgba(255,255,255,.55) 48%,
+      rgba(102,245,255,.35) 52%,
+      transparent 65%
+    );
+  transform:translateX(-90%) skewX(-18deg);
+  animation: cameraSweep 2.4s ease-in-out infinite;
+}
+
+/* zoom focus très léger */
+.hero .btn-primary::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border:1px solid rgba(255,255,255,.45);
+  opacity:0;
+  transform:scale(.88);
+  animation: focusFrame 3.2s ease-in-out infinite;
+}
+
+.hero .btn-primary:hover{
+  transform:translateY(-4px) scale(1.05);
+  filter:contrast(1.08) brightness(1.12);
+  box-shadow:
+    0 0 38px rgba(102,245,255,.75),
+    0 28px 70px rgba(0,0,0,.45);
+}
+
+@keyframes cameraFocus{
+  0%,100%{
+    transform:scale(1);
+    filter:brightness(1);
+  }
+  45%{
+    transform:scale(1.025);
+    filter:brightness(1.16);
+  }
+  55%{
+    transform:scale(.995);
+    filter:brightness(1.04);
+  }
+}
+
+@keyframes cameraSweep{
+  0%{
+    transform:translateX(-100%) skewX(-18deg);
+    opacity:0;
+  }
+  35%{
+    opacity:.9;
+  }
+  65%{
+    transform:translateX(100%) skewX(-18deg);
+    opacity:.9;
+  }
+  100%{
+    transform:translateX(100%) skewX(-18deg);
+    opacity:0;
+  }
+}
+
+@keyframes focusFrame{
+  0%,70%,100%{
+    opacity:0;
+    transform:scale(.88);
+  }
+  45%{
+    opacity:.8;
+    transform:scale(1);
+  }
+}
+
+
+
+
+
+
 .btn-primary:hover{
   transform:translateY(-2px);
 }
