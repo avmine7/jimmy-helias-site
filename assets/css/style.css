@@ -203,101 +203,111 @@ img{max-width:100%; display:block}
   box-shadow:0 12px 35px rgba(54,193,210,.18);
 }
 
-/* ================= BOUTON VOIR LA SAISON — EFFET CAMÉRA F1 ================= */
+/* ================= BOUTON VOIR LA SAISON — SPEED CTA ================= */
 
 .hero .btn-primary{
   position:relative;
   overflow:hidden;
   isolation:isolate;
+
   background:
-    linear-gradient(135deg, #66f5ff 0%, #1f9fb0 45%, #063040 100%);
-  border:1px solid rgba(102,245,255,.75);
+    linear-gradient(135deg, #78ffff 0%, #20c7dc 45%, #073644 100%);
+  border:1px solid rgba(120,255,255,.85);
+
   box-shadow:
-    0 0 22px rgba(102,245,255,.35),
-    0 18px 45px rgba(0,0,0,.35);
-  animation: cameraFocus 3.2s ease-in-out infinite;
+    0 0 22px rgba(120,255,255,.45),
+    0 18px 45px rgba(0,0,0,.38);
+
+  animation: ctaMagnet 1.8s ease-in-out infinite;
 }
 
-/* balayage façon caméra / lumière de paddock */
+/* lumière rapide qui traverse */
 .hero .btn-primary::before{
   content:"";
   position:absolute;
-  inset:-40%;
-  z-index:-1;
-  background:
-    linear-gradient(
-      115deg,
-      transparent 35%,
-      rgba(255,255,255,.55) 48%,
-      rgba(102,245,255,.35) 52%,
-      transparent 65%
-    );
-  transform:translateX(-90%) skewX(-18deg);
-  animation: cameraSweep 2.4s ease-in-out infinite;
+  top:-60%;
+  left:-80%;
+  width:55%;
+  height:220%;
+  background:linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255,255,255,.85) 45%,
+    rgba(120,255,255,.55) 55%,
+    transparent 80%
+  );
+  transform:skewX(-22deg);
+  animation: ctaFlash 2.1s ease-in-out infinite;
 }
 
-/* zoom focus très léger */
+/* flèche animée intégrée */
 .hero .btn-primary::after{
   content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  border:1px solid rgba(255,255,255,.45);
-  opacity:0;
-  transform:scale(.88);
-  animation: focusFrame 3.2s ease-in-out infinite;
+  display:inline-block;
+  width:22px;
+  height:22px;
+  margin-left:10px;
+
+  background:url("../img/JH_NEON.png") no-repeat center;
+  background-size:contain;
+
+  position:relative;
+  z-index:2;
+
+  filter: drop-shadow(0 0 8px rgba(120,255,255,.6));
+
+  animation: logoMove .8s ease-in-out infinite;
 }
+
+
+@keyframes logoMove{
+  0%,100%{ transform:translateX(0); }
+  50%{ transform:translateX(6px); }
+}
+
+.hero .btn-primary::after{
+  opacity:.95;
+  transition:.3s;
+}
+
+.hero .btn-primary:hover::after{
+  transform:translateX(10px) scale(1.1);
+  opacity:1;
+}
+
+
 
 .hero .btn-primary:hover{
-  transform:translateY(-4px) scale(1.05);
-  filter:contrast(1.08) brightness(1.12);
+  transform:translateY(-5px) scale(1.07);
+  background:
+    linear-gradient(135deg, #ffffff 0%, #78ffff 35%, #20c7dc 100%);
+  color:#021018;
   box-shadow:
-    0 0 38px rgba(102,245,255,.75),
-    0 28px 70px rgba(0,0,0,.45);
+    0 0 45px rgba(120,255,255,.95),
+    0 30px 80px rgba(0,0,0,.48);
 }
 
-@keyframes cameraFocus{
+@keyframes ctaMagnet{
   0%,100%{
-    transform:scale(1);
+    transform:translateY(0) scale(1);
     filter:brightness(1);
   }
-  45%{
-    transform:scale(1.025);
-    filter:brightness(1.16);
-  }
-  55%{
-    transform:scale(.995);
-    filter:brightness(1.04);
+  50%{
+    transform:translateY(-2px) scale(1.025);
+    filter:brightness(1.18);
   }
 }
 
-@keyframes cameraSweep{
-  0%{
-    transform:translateX(-100%) skewX(-18deg);
-    opacity:0;
-  }
-  35%{
-    opacity:.9;
-  }
-  65%{
-    transform:translateX(100%) skewX(-18deg);
-    opacity:.9;
-  }
-  100%{
-    transform:translateX(100%) skewX(-18deg);
-    opacity:0;
-  }
+@keyframes ctaFlash{
+  0%{ left:-90%; opacity:0; }
+  25%{ opacity:1; }
+  55%{ left:130%; opacity:1; }
+  100%{ left:130%; opacity:0; }
 }
 
-@keyframes focusFrame{
-  0%,70%,100%{
-    opacity:0;
-    transform:scale(.88);
-  }
-  45%{
-    opacity:.8;
-    transform:scale(1);
-  }
+@keyframes arrowPush{
+  0%,100%{ transform:translateX(0); }
+  50%{ transform:translateX(6px); }
 }
 
 
