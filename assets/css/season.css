@@ -1026,3 +1026,168 @@ body::before{
 }
 
 /* =================FIN NOGARO SWIPE MOBILE ================= */
+
+
+
+
+/* ==================================================
+   HERO SAISON — PHOTOS FONDUES PREMIUM
+   ================================================== */
+
+.seasonHero{
+  position:relative;
+  overflow:hidden;
+}
+
+/* CONTENEUR PHOTOS */
+
+.seasonHeroPhotos{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+
+  background:#05090c;
+}
+
+/* IMAGES */
+
+.seasonHeroPhotos img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:0;
+
+  animation:
+    seasonFade 18s infinite,
+    seasonZoom 18s infinite;
+
+  transform:scale(1.08);
+
+  filter:
+    brightness(.72)
+    saturate(1.15)
+    contrast(1.05);
+
+  will-change:transform, opacity;
+}
+
+/* IMAGE 1 */
+
+.seasonHeroPhotos img:nth-child(1){
+  animation-delay:0s;
+
+  object-position:center 35%;
+}
+
+/* IMAGE 2 */
+
+.seasonHeroPhotos img:nth-child(2){
+  animation-delay:6s;
+
+  object-position:center 28%;
+}
+
+/* IMAGE 3 */
+
+.seasonHeroPhotos img:nth-child(3){
+  animation-delay:12s;
+
+  object-position:center 24%;
+}
+
+/* ==================================================
+   FADE
+   ================================================== */
+
+@keyframes seasonFade{
+
+  0%{
+    opacity:0;
+  }
+
+  8%{
+    opacity:.45;
+  }
+
+  28%{
+    opacity:.60;
+  }
+
+  36%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:0;
+  }
+}
+
+/* ==================================================
+   ZOOM CINEMATIC
+   ================================================== */
+
+@keyframes seasonZoom{
+
+  0%{
+    transform:scale(1.12);
+  }
+
+  30%{
+    transform:scale(1.03);
+  }
+
+  100%{
+    transform:scale(1.12);
+  }
+}
+
+/* ==================================================
+   OVERLAY PREMIUM
+   ================================================== */
+
+.seasonHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,12,18,.35),
+      rgba(2,12,18,.70)
+    );
+}
+
+/* contenu devant */
+
+.seasonHero-grid{
+  position:relative;
+  z-index:3;
+}
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width:768px){
+
+  .seasonHeroPhotos img:nth-child(1){
+    object-position:center 24%;
+  }
+
+  .seasonHeroPhotos img:nth-child(2){
+    object-position:center 20%;
+  }
+
+  .seasonHeroPhotos img:nth-child(3){
+    object-position:center 18%;
+  }
+
+}
