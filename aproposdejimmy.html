@@ -376,5 +376,20 @@
 
 <script src="assets/js/main.js"></script>
 
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav');
+
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+
+      const isOpen = nav.classList.contains('is-open');
+      burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+</script>
+
+
 </body>
 </html>
