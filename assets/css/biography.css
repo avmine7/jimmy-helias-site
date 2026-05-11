@@ -1989,3 +1989,42 @@ body::before{
     font-size:.74rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+.timelineSection{
+  position:relative;
+  overflow:hidden;
+}
+
+.timelineBg{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,16,24,.78),
+      rgba(2,16,24,.82)
+    ),
+    url("../img/JimmyOverlay14.JPG");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  z-index:0;
+}
+
+.timelineSection .container{
+  position:relative;
+  z-index:2;
+}
