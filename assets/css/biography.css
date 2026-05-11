@@ -1728,3 +1728,264 @@ body::before{
   font-size:.98rem;
   line-height:1.7;
 }
+
+/* ================= MEDIA CTA PREMIUM ================= */
+/* ================= MEDIA CTA ULTRA PREMIUM ================= */
+
+.mediaCTA{
+  position:relative;
+  margin-top:75px;
+  width:100%;
+}
+
+.mediaCTA-line{
+  width:170px;
+  height:1px;
+  margin:0 auto 34px;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(120,255,255,.9),
+    transparent
+  );
+
+  box-shadow:0 0 28px rgba(120,255,255,.45);
+}
+
+.mediaCTA-btn{
+  position:relative;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  align-items:center;
+  gap:42px;
+
+  width:100%;
+  min-height:220px;
+
+  padding:44px 54px;
+
+  border-radius:34px;
+  overflow:hidden;
+  text-decoration:none;
+
+  border:1px solid rgba(120,255,255,.28);
+
+  background:
+    linear-gradient(120deg, rgba(120,255,255,.10), transparent 38%),
+    radial-gradient(circle at 82% 18%, rgba(120,255,255,.14), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    inset 0 0 60px rgba(120,255,255,.025),
+    0 30px 90px rgba(0,0,0,.30),
+    0 0 90px rgba(120,255,255,.08);
+
+  isolation:isolate;
+
+  transition:
+    transform .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+}
+
+.mediaCTA-btn::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 34%,
+      rgba(255,255,255,.14) 48%,
+      rgba(120,255,255,.14) 52%,
+      transparent 66%,
+      transparent 100%
+    );
+
+  transform:translateX(-130%);
+  transition:transform .9s ease;
+  z-index:-1;
+}
+
+.mediaCTA-btn::after{
+  content:"MEDIA";
+  position:absolute;
+  right:34px;
+  bottom:18px;
+
+  color:rgba(255,255,255,.035);
+
+  font-size:clamp(3rem,8vw,6.8rem);
+  font-weight:950;
+  line-height:.8;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+
+  pointer-events:none;
+  z-index:-1;
+}
+
+.mediaCTA-btn:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(120,255,255,.7);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.07),
+    inset 0 0 80px rgba(120,255,255,.04),
+    0 40px 110px rgba(0,0,0,.38),
+    0 0 120px rgba(120,255,255,.16);
+}
+
+.mediaCTA-btn:hover::before{
+  transform:translateX(130%);
+}
+
+.mediaCTA-left{
+  position:relative;
+  z-index:2;
+}
+
+.mediaCTA-small{
+  display:block;
+
+  margin-bottom:16px;
+
+  color:#78ffff;
+
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+}
+
+.mediaCTA-title{
+  display:block;
+  position:relative;
+  z-index:2;
+
+  color:#fff;
+
+  font-size:clamp(2.6rem,5vw,5.2rem);
+  font-weight:950;
+  line-height:.88;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+
+  text-shadow:
+    0 0 22px rgba(255,255,255,.06),
+    0 0 34px rgba(120,255,255,.05);
+}
+
+.mediaCTA-arrow{
+  position:relative;
+  z-index:2;
+
+  justify-self:end;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+
+  min-width:250px;
+  padding:17px 24px;
+
+  border-radius:999px;
+
+  color:#021018;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #78ffff 45%,
+      #38eaff
+    );
+
+  font-size:.82rem;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+
+  box-shadow:
+    0 0 28px rgba(120,255,255,.35),
+    0 0 70px rgba(120,255,255,.14);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.mediaCTA-btn:hover .mediaCTA-arrow{
+  transform:translateX(8px);
+
+  box-shadow:
+    0 0 38px rgba(120,255,255,.55),
+    0 0 100px rgba(120,255,255,.20);
+}
+
+.mediaCTA-arrow svg{
+  width:20px;
+  height:20px;
+
+  stroke:#021018;
+  stroke-width:2.4;
+  fill:none;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+  .mediaCTA{
+    margin-top:55px;
+  }
+
+  .mediaCTA-line{
+    width:90px;
+    margin-bottom:24px;
+  }
+
+  .mediaCTA-btn{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    min-height:auto;
+
+    padding:32px 22px;
+
+    border-radius:26px;
+  }
+
+  .mediaCTA-btn::after{
+    right:10px;
+    bottom:8px;
+    font-size:3rem;
+  }
+
+  .mediaCTA-small{
+    font-size:.62rem;
+    letter-spacing:.22em;
+  }
+
+  .mediaCTA-title{
+    font-size:2.5rem;
+  }
+
+  .mediaCTA-arrow{
+    min-width:auto;
+    width:100%;
+
+    margin-top:22px;
+
+    font-size:.74rem;
+  }
+}

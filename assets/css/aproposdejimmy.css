@@ -1,0 +1,1238 @@
+:root{
+  --bg:#021018;
+  --bg2:#041a24;
+  --text:#f4f5f2;
+  --muted:rgba(244,245,242,.72);
+  --cyan:#78ffff;
+  --cyan2:#00d9ff;
+  --line:rgba(120,255,255,.28);
+  --glass:rgba(255,255,255,.045);
+  --radius:28px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(120,255,255,.16), transparent 34%),
+    linear-gradient(135deg, #021018, #063040);
+  color:var(--text);
+}
+
+a{
+  color:inherit;
+}
+
+.container{
+  width:min(100% - 48px, 1320px);
+  margin-inline:auto;
+}
+
+/* ================= HEADER ================= */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(120,255,255,.18);
+}
+
+.header-inner{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+
+.brand-logo{
+  width:46px;
+  height:auto;
+}
+
+.brand-name{
+  line-height:1.1;
+  font-size:1rem;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav-link{
+  text-decoration:none;
+  color:rgba(255,255,255,.72);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  transition:.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active{
+  color:var(--cyan);
+}
+
+.nav-socials{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-left:10px;
+  padding-left:22px;
+  border-left:1px solid rgba(255,255,255,.14);
+}
+
+.nav-social{
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  color:rgba(255,255,255,.75);
+}
+
+.nav-icon{
+  width:20px;
+  height:20px;
+  fill:currentColor;
+}
+
+.burger{
+  display:none;
+}
+
+/* ================= GENERAL ================= */
+
+.section{
+  padding:90px 0;
+}
+
+.section.alt{
+  background:rgba(0,0,0,.14);
+  border-top:1px solid rgba(120,255,255,.10);
+  border-bottom:1px solid rgba(120,255,255,.10);
+}
+
+.section-head{
+  margin-bottom:38px;
+}
+
+.section-head h2{
+  margin:12px 0 12px;
+  font-size:clamp(2rem,4vw,3.6rem);
+  line-height:.95;
+  text-transform:uppercase;
+  letter-spacing:-.04em;
+}
+
+.section-head p{
+  max-width:720px;
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+.tag{
+  display:inline-flex;
+  padding:9px 16px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--cyan);
+  font-size:.78rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  background:rgba(120,255,255,.08);
+}
+
+/* ================= HERO PAGE ================= */
+
+/* ================= HERO PAGE — ON PARLE DE JIMMY PREMIUM ================= */
+
+.mediaPageHero{
+  position:relative;
+  padding:105px 0 80px;
+  overflow:hidden;
+}
+
+.mediaPageHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(850px 520px at 18% 35%, rgba(120,255,255,.20), transparent 65%),
+    radial-gradient(720px 460px at 88% 15%, rgba(0,217,255,.13), transparent 62%);
+  pointer-events:none;
+}
+
+.mediaPageHeroCard{
+  position:relative;
+  z-index:2;
+  overflow:hidden;
+
+  min-height:520px;
+  padding:64px 70px;
+
+  border-radius:44px;
+  border:1px solid rgba(120,255,255,.30);
+
+  background:
+    linear-gradient(90deg, rgba(2,16,24,.88) 0%, rgba(5,45,58,.72) 48%, rgba(2,16,24,.92) 100%);
+
+  box-shadow:
+    0 42px 120px rgba(0,0,0,.36),
+    0 0 100px rgba(120,255,255,.10),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.mediaPageHeroCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.05), rgba(0,0,0,.22)),
+    radial-gradient(circle at 18% 25%, rgba(120,255,255,.22), transparent 32%),
+    repeating-linear-gradient(
+      115deg,
+      rgba(255,255,255,.035) 0px,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  opacity:.55;
+  pointer-events:none;
+}
+
+.mediaPageHeroCard::after{
+  content:"ON PARLE";
+  position:absolute;
+  right:-20px;
+  top:35px;
+
+  font-size:clamp(5rem,11vw,12rem);
+  font-weight:950;
+  letter-spacing:-.08em;
+  line-height:.8;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+.mediaPageEyebrow{
+  position:relative;
+  z-index:2;
+
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  margin-bottom:28px;
+  padding:9px 14px;
+
+  border-radius:999px;
+  border:1px solid rgba(120,255,255,.35);
+  background:rgba(120,255,255,.08);
+
+  color:var(--cyan);
+
+  font-size:.72rem;
+  font-weight:950;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.mediaPageHeroCard h1{
+  position:relative;
+  z-index:2;
+
+  margin:0;
+  max-width:760px;
+
+  font-size:clamp(4rem,8.6vw,8.5rem);
+  line-height:.82;
+  letter-spacing:-.08em;
+  text-transform:uppercase;
+}
+
+.mediaPageHeroCard h1::after{
+  content:"";
+  display:block;
+
+  width:180px;
+  height:3px;
+
+  margin:34px 0 0;
+
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--cyan), transparent);
+  box-shadow:0 0 28px rgba(120,255,255,.55);
+}
+
+.mediaPageHeroCard p{
+  position:relative;
+  z-index:2;
+
+  margin:30px 0 0;
+  max-width:730px;
+
+  color:rgba(244,245,242,.78);
+
+  font-size:1.12rem;
+  line-height:1.8;
+}
+
+.mediaPageStats{
+  position:absolute;
+  z-index:3;
+
+  right:56px;
+  bottom:54px;
+
+  width:min(420px, 36%);
+
+  display:grid;
+  gap:14px;
+}
+
+.mediaStat{
+  position:relative;
+  overflow:hidden;
+
+  padding:18px 22px;
+
+  border-radius:22px;
+  border:1px solid rgba(120,255,255,.20);
+
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 18px 46px rgba(0,0,0,.22);
+}
+
+.mediaStat::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(120deg, rgba(120,255,255,.14), transparent 45%);
+  opacity:.7;
+  pointer-events:none;
+}
+
+.mediaStat strong{
+  position:relative;
+  z-index:2;
+
+  display:block;
+  margin-bottom:5px;
+
+  color:#fff;
+  font-size:1rem;
+  font-weight:950;
+}
+
+.mediaStat span{
+  position:relative;
+  z-index:2;
+
+  color:rgba(244,245,242,.66);
+  font-size:.92rem;
+}
+
+/* RESPONSIVE HERO */
+
+@media (max-width:900px){
+
+  .mediaPageHeroCard{
+    min-height:auto;
+  }
+
+  .mediaPageStats{
+    position:relative;
+    right:auto;
+    bottom:auto;
+
+    width:100%;
+    margin-top:38px;
+  }
+}
+
+@media (max-width:768px){
+
+  .mediaPageHero{
+    padding:70px 0 55px;
+  }
+
+  .mediaPageHeroCard{
+    padding:38px 26px;
+    border-radius:30px;
+  }
+
+  .mediaPageHeroCard::after{
+    font-size:5rem;
+    top:auto;
+    bottom:20px;
+    right:-8px;
+  }
+
+  .mediaPageHeroCard h1{
+    font-size:3.4rem;
+  }
+
+  .mediaPageHeroCard h1::after{
+    width:120px;
+    margin-top:24px;
+  }
+
+  .mediaPageHeroCard p{
+    font-size:1rem;
+  }
+}
+
+/* ================= INTERVIEWS — PREMIUM ================= */
+
+#interviews{
+  position:relative;
+  padding-top:90px;
+}
+
+#interviews .section-head{
+  margin-bottom:42px;
+}
+
+.youtubeGrid{
+  display:flex;
+  flex-direction:column;
+  gap:36px;
+  margin-top:34px;
+}
+
+.youtubeCard{
+  position:relative;
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  padding:14px;
+
+  border-radius:30px;
+  border:1px solid rgba(120,255,255,.22);
+
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.018)),
+    radial-gradient(circle at top left, rgba(120,255,255,.13), transparent 42%);
+
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.32),
+    0 0 60px rgba(120,255,255,.08);
+
+  transition:.35s ease;
+}
+
+.youtubeCard:hover{
+  transform:translateY(-6px);
+  border-color:rgba(120,255,255,.50);
+  box-shadow:
+    0 34px 95px rgba(0,0,0,.42),
+    0 0 90px rgba(120,255,255,.14);
+}
+
+.youtubeCard iframe{
+  width:100%;
+  height:255px;
+  border:none;
+  border-radius:22px;
+  display:block;
+  background:#111;
+}
+
+.videoTitle{
+  margin:16px 8px 2px;
+  color:#fff;
+  font-size:1.02rem;
+  font-weight:750;
+  letter-spacing:-.01em;
+}
+
+/* ================= ARTICLES PRESSE — PREMIUM ================= */
+
+.pressCards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  margin-top:42px;
+}
+
+.pressCard{
+  position:relative;
+  min-height:310px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:18px;
+
+  padding:30px;
+  border-radius:30px;
+
+  text-decoration:none;
+  overflow:hidden;
+
+  border:1px solid rgba(120,255,255,.20);
+
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.060), rgba(255,255,255,.018)),
+    radial-gradient(circle at top left, rgba(120,255,255,.15), transparent 45%);
+
+  box-shadow:
+    0 26px 80px rgba(0,0,0,.28),
+    inset 0 0 0 1px rgba(255,255,255,.035);
+
+  transition:.38s ease;
+}
+
+.pressCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(255,255,255,.12) 50%,
+      transparent 65%,
+      transparent 100%
+    );
+
+  transform:translateX(-120%);
+  transition:transform .8s ease;
+}
+
+.pressCard:hover::before{
+  transform:translateX(120%);
+}
+
+.pressCard:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(120,255,255,.58);
+
+  box-shadow:
+    0 38px 105px rgba(0,0,0,.42),
+    0 0 85px rgba(120,255,255,.15);
+}
+
+.pressSource{
+  position:relative;
+  z-index:2;
+
+  width:max-content;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:rgba(120,255,255,.10);
+  border:1px solid rgba(120,255,255,.30);
+
+  color:var(--cyan);
+
+  font-size:.72rem;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+}
+
+.pressCard h3{
+  position:relative;
+  z-index:2;
+
+  margin:0;
+
+  font-size:1.28rem;
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+
+.pressCard p{
+  position:relative;
+  z-index:2;
+
+  margin:0;
+
+  color:rgba(244,245,242,.70);
+
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+.pressLink{
+  position:relative;
+  z-index:2;
+
+  color:var(--cyan);
+
+  font-weight:950;
+  letter-spacing:.02em;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  padding:34px 0;
+  border-top:1px solid rgba(120,255,255,.16);
+  background:rgba(0,0,0,.35);
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  color:rgba(255,255,255,.72);
+}
+
+.footer-links{
+  display:flex;
+  gap:20px;
+}
+
+.footer-links a{
+  text-decoration:none;
+  color:rgba(255,255,255,.72);
+}
+
+.footer-links a:hover{
+  color:var(--cyan);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1100px){
+
+  .pressCards{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .youtubeCard iframe{
+    height:235px;
+  }
+
+  .nav{
+    gap:18px;
+  }
+
+  .nav-link{
+    font-size:.85rem;
+  }
+}
+
+@media (max-width:768px){
+
+  .container{
+    width:min(100% - 28px, 1320px);
+  }
+
+  .header-inner{
+    min-height:76px;
+  }
+
+  .burger{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    border:0;
+    background:transparent;
+  }
+
+  .burger span{
+    width:28px;
+    height:2px;
+    background:#fff;
+    display:block;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .section{
+    padding:64px 0;
+  }
+
+  .mediaPageHero{
+    padding:70px 0 60px;
+  }
+
+  .mediaPageHeroCard{
+    padding:38px 26px;
+    border-radius:28px;
+  }
+
+  .mediaPageHeroCard h1{
+    font-size:3.2rem;
+  }
+
+  .mediaPageStats{
+    grid-template-columns:1fr;
+  }
+
+  .youtubeCard{
+    padding:10px;
+    border-radius:24px;
+  }
+
+  .youtubeCard iframe{
+    height:210px;
+    border-radius:18px;
+  }
+
+  .pressCards{
+    grid-template-columns:1fr;
+  }
+
+  .pressCard{
+    min-height:auto;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media (max-width:520px){
+
+  .youtubeCard iframe{
+    height:185px;
+  }
+
+  .videoTitle{
+    font-size:.95rem;
+  }
+}
+
+
+
+
+
+
+
+/* ================= ANIMATIONS PREMIUM — ON PARLE DE JIMMY ================= */
+
+@keyframes heroGlowMove{
+  0%{
+    transform:translate3d(-2%, -2%, 0) scale(1);
+    opacity:.55;
+  }
+  100%{
+    transform:translate3d(2%, 2%, 0) scale(1.05);
+    opacity:.9;
+  }
+}
+
+@keyframes heroLightSweep{
+  0%{
+    transform:translateX(-140%) skewX(-12deg);
+  }
+  100%{
+    transform:translateX(140%) skewX(-12deg);
+  }
+}
+
+@keyframes floatCard{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+@keyframes pulseLine{
+  0%,100%{
+    opacity:.35;
+    width:120px;
+  }
+  50%{
+    opacity:1;
+    width:190px;
+  }
+}
+
+/* Fond hero vivant */
+.mediaPageHero::before{
+  animation:heroGlowMove 8s ease-in-out infinite alternate;
+}
+
+/* Lumière qui traverse le hero */
+.mediaPageHeroCard{
+  isolation:isolate;
+}
+
+.mediaPageHeroCard::before{
+  animation:heroGlowMove 10s ease-in-out infinite alternate;
+}
+
+.mediaPageHeroCard .mediaPageEyebrow::after{
+  content:"";
+  width:38px;
+  height:1px;
+  background:var(--cyan);
+  box-shadow:0 0 18px rgba(120,255,255,.8);
+}
+
+/* Barre sous le titre animée */
+.mediaPageHeroCard h1::after{
+  animation:pulseLine 3.2s ease-in-out infinite;
+}
+
+/* Cartes stats mouvement léger */
+.mediaStat{
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.mediaStat:nth-child(1){
+  animation:floatCard 5s ease-in-out infinite;
+}
+
+.mediaStat:nth-child(2){
+  animation:floatCard 5s ease-in-out infinite .7s;
+}
+
+.mediaStat:nth-child(3){
+  animation:floatCard 5s ease-in-out infinite 1.4s;
+}
+
+.mediaStat:hover{
+  transform:translateY(-10px) scale(1.02);
+  border-color:rgba(120,255,255,.55);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.32),
+    0 0 50px rgba(120,255,255,.16);
+}
+
+/* Effet lumière sur les vidéos */
+.youtubeCard{
+  overflow:hidden;
+}
+
+.youtubeCard::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  background:linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255,255,255,.14),
+    transparent 65%
+  );
+  transform:translateX(-140%) skewX(-12deg);
+  transition:transform .8s ease;
+  pointer-events:none;
+  z-index:2;
+}
+
+.youtubeCard:hover::before{
+  transform:translateX(140%) skewX(-12deg);
+}
+
+.youtubeCard iframe{
+  transition:
+    transform .45s ease,
+    filter .45s ease;
+}
+
+.youtubeCard:hover iframe{
+  transform:scale(1.012);
+  filter:brightness(1.06) contrast(1.04);
+}
+
+/* Effet premium sur articles */
+.pressCard{
+  transform-style:preserve-3d;
+}
+
+.pressCard:hover{
+  transform:translateY(-10px) scale(1.015);
+}
+
+.pressCard h3,
+.pressCard p,
+.pressCard .pressSource,
+.pressCard .pressLink{
+  transition:transform .35s ease;
+}
+
+.pressCard:hover h3{
+  transform:translateY(-4px);
+}
+
+.pressCard:hover .pressLink{
+  transform:translateX(6px);
+}
+
+/* Apparition douce au chargement */
+.mediaPageHeroCard,
+.youtubeCard,
+.pressCard{
+  animation:fadeUpPremium .75s ease both;
+}
+
+@keyframes fadeUpPremium{
+  from{
+    opacity:0;
+    transform:translateY(24px);
+    filter:blur(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+.youtubeCard:nth-child(2),
+.pressCard:nth-child(2){
+  animation-delay:.12s;
+}
+
+.youtubeCard:nth-child(3),
+.pressCard:nth-child(3){
+  animation-delay:.24s;
+}
+
+.pressCard:nth-child(4){
+  animation-delay:.36s;
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none !important;
+    transition:none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= PHOTOS FONDUES HERO ================= */
+
+/* ================= HERO PHOTOS FADE ================= */
+/* =========================================================
+   HERO PHOTO FADE — ULTRA PREMIUM CINEMATIC
+   ========================================================= */
+
+.heroPhotoFade{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+
+  background:#021018;
+}
+
+/* glow global */
+.heroPhotoFade::before{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  z-index:2;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(120,255,255,.14), transparent 30%),
+    radial-gradient(circle at 82% 28%, rgba(0,217,255,.12), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(120,255,255,.08), transparent 45%);
+
+  mix-blend-mode:screen;
+  filter:blur(18px);
+
+  animation:heroGlow 8s ease-in-out infinite alternate;
+
+  pointer-events:none;
+}
+
+/* lignes racing */
+.heroPhotoFade::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  background:
+    repeating-linear-gradient(
+      115deg,
+      rgba(255,255,255,.02) 0px,
+      rgba(255,255,255,.02) 2px,
+      transparent 2px,
+      transparent 18px
+    );
+
+  opacity:.18;
+  pointer-events:none;
+}
+
+/* ================= IMAGES ================= */
+
+.heroPhotoFade img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:0;
+
+  animation:
+    heroFade 18s infinite,
+    heroZoom 18s infinite;
+
+  filter:
+    brightness(.92)
+    saturate(1.18)
+    contrast(1.08);
+
+  transform:scale(1.08);
+
+  will-change:transform, opacity;
+}
+
+/* ================= POSITIONNEMENT PAR PHOTO ================= */
+
+/* PHOTO 1 — Jimmy qui marche */
+/* PHOTO 1 — Jimmy qui marche */
+.heroPhotoFade img:nth-child(1){
+  animation-delay:0s;
+
+  /* mieux centré sur Jimmy */
+  object-position:center 14%;
+}
+
+/* PHOTO 2 — portrait paddock */
+.heroPhotoFade img:nth-child(2){
+  animation-delay:6s;
+
+  object-position:center 18%;
+}
+
+/* PHOTO 3 — casque */
+.heroPhotoFade img:nth-child(3){
+  animation-delay:12s;
+
+  object-position:34% 18%;
+}
+
+/* ================= FADE ================= */
+
+@keyframes heroFade{
+
+  0%{
+    opacity:0;
+  }
+
+  6%{
+    opacity:.52;
+  }
+
+  28%{
+    opacity:.64;
+  }
+
+  34%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:0;
+  }
+}
+
+/* ================= CINEMATIC ZOOM ================= */
+
+@keyframes heroZoom{
+
+  0%{
+    transform:scale(1.12);
+  }
+
+  30%{
+    transform:scale(1.03);
+  }
+
+  100%{
+    transform:scale(1.12);
+  }
+}
+
+/* ================= GLOW ANIMATION ================= */
+
+@keyframes heroGlow{
+
+  from{
+    transform:translateY(-1%) scale(1);
+    opacity:.7;
+  }
+
+  to{
+    transform:translateY(1%) scale(1.03);
+    opacity:1;
+  }
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.mediaPageHero{
+  position:relative;
+  overflow:hidden;
+}
+
+/* overlay cinematic */
+.mediaPageHero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,16,24,.10) 0%,
+      rgba(2,16,24,.22) 35%,
+      rgba(2,16,24,.50) 100%
+    );
+}
+
+/* vignette premium */
+.mediaPageHero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+
+  background:
+    radial-gradient(circle at center, transparent 42%, rgba(0,0,0,.34));
+
+  pointer-events:none;
+}
+
+/* contenu au dessus */
+.mediaPageHero .container{
+  position:relative;
+  z-index:3;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:768px){
+
+  .heroPhotoFade::after{
+    opacity:.10;
+  }
+
+  .heroPhotoFade img{
+    transform:scale(1.03);
+  }
+
+  /* PHOTO 1 */
+  .heroPhotoFade img:nth-child(1){
+    object-position:center 14%;
+  }
+
+  /* PHOTO 2 */
+  .heroPhotoFade img:nth-child(2){
+    object-position:center 12%;
+  }
+
+  /* PHOTO 3 */
+  .heroPhotoFade img:nth-child(3){
+    object-position:38% 14%;
+  }
+
+  .mediaPageHero{
+    padding:72px 0 58px;
+  }
+}
+
+
+
+/* ================= HERO CARD PLUS TRANSPARENT ================= */
+
+/* ================= HERO CARD VERRE TRANSPARENT ================= */
+
+.mediaPageHeroCard{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2,16,24,.18),
+      rgba(2,16,24,.10)
+    ),
+    radial-gradient(
+      circle at top left,
+      rgba(120,255,255,.05),
+      transparent 42%
+    ) !important;
+
+  backdrop-filter:blur(6px);
+
+  border:1px solid rgba(120,255,255,.12);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.02),
+    0 20px 70px rgba(0,0,0,.14),
+    0 0 40px rgba(120,255,255,.03);
+}
+
+/* assombrit beaucoup moins */
+.mediaPageHero::before{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,16,24,.04) 0%,
+      rgba(2,16,24,.12) 45%,
+      rgba(2,16,24,.22) 100%
+    ) !important;
+}
