@@ -1289,3 +1289,41 @@ a{
     border-top:1px solid rgba(255,255,255,.12);
   }
 }
+
+
+/* ================= BACKGROUND ARTICLES ================= */
+
+/* ================= FIX BACKGROUND ARTICLES ================= */
+
+section.pressSectionBg{
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      rgba(0,10,18,.58),
+      rgba(0,10,18,.68)
+    ),
+    url("../img/Voiture1.JPG") !important;
+
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed;
+}
+
+section.pressSectionBg .container{
+  position:relative;
+  z-index:2;
+}
+
+/* ================= RESPONSIVE BACKGROUND ================= */
+
+@media (max-width: 768px){
+
+  section.pressSectionBg{
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+
+}

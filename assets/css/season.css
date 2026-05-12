@@ -1192,3 +1192,66 @@ body::before{
   }
 
 }
+
+
+/* ================= MINI CLASSEMENT BACKGROUND ================= */
+
+.rankingSection{
+  position:relative;
+  overflow:hidden;
+}
+
+.rankingSection::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,16,24,.82),
+      rgba(2,16,24,.88)
+    ),
+    url("../img/JimmyOverlay17.JPG");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  z-index:0;
+}
+
+.rankingSection .container{
+  position:relative;
+  z-index:2;
+}
+
+/* ================= ANIMATION FOND CLASSEMENT ================= */
+
+.rankingSection::before{
+  animation:rankingBgMove 16s ease-in-out infinite alternate;
+  transform:scale(1.06);
+}
+
+@keyframes rankingBgMove{
+
+  0%{
+    transform:scale(1.06) translate3d(0,0,0);
+  }
+
+  100%{
+    transform:scale(1.12) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+.rankingSection::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.35));
+
+  pointer-events:none;
+  z-index:1;
+}
