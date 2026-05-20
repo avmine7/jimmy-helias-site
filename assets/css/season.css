@@ -1255,3 +1255,77 @@ body::before{
   pointer-events:none;
   z-index:1;
 }
+
+
+/* ================= GALERIE DIJON ================= */
+
+/* ================= GALERIE DIJON PREMIUM ================= */
+
+/* ================= GALERIE DIJON ================= */
+
+.galleryGrid--dijon{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+}
+
+.galleryGrid--dijon .galleryItem{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+  border-radius:26px;
+  background:#071922;
+  border:1px solid rgba(120,255,255,.15);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.35);
+}
+
+.galleryGrid--dijon .galleryItem img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+}
+
+/* PHOTO 1 */
+.galleryGrid--dijon .galleryItem:nth-child(1) img{
+  object-position:center center;
+}
+
+/* PHOTO 2 */
+.galleryGrid--dijon .galleryItem:nth-child(2) img{
+  object-position:center 35%;
+}
+
+.galleryGrid--dijon .galleryItem:hover img{
+  transform:scale(1.04);
+}
+
+/* overlay cinematic */
+.galleryGrid--dijon .galleryItem::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.45),
+      rgba(0,0,0,.05) 45%,
+      rgba(0,0,0,.12)
+    );
+  pointer-events:none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+
+  .galleryGrid--dijon{
+    grid-template-columns:1fr;
+  }
+
+  .galleryGrid--dijon .galleryItem{
+    height:320px;
+  }
+
+}
